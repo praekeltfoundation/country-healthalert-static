@@ -1,0 +1,51 @@
+/*
+  Global Reset Styles
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+
+:root {
+  --soft-blue: #59a0ee;
+  --pure-blue: #0070f3;
+  --dark-blue: #004574;
+  --grayish-orange: #edecea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+a {
+  color: var(--pure-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2 ,h3 , h4, h5, h6, p {
+  margin: 0;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
