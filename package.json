@@ -1,15 +1,30 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
-  "private": true,
+  "name": "who-static-healthalert",
+  "version": "1.0.0",
+  "description": "WHO HealthAlert SPA",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praekeltfoundation/who-static-healthalert.git"
+  },
+  "keywords": [
+    "WHO"
+  ],
+  "author": "Praekelt.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/praekeltfoundation/who-static-healthalert/issues"
+  },
+  "homepage": "https://github.com/praekeltfoundation/who-static-healthalert#readme",
   "dependencies": {
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "sass": "^1.26.10"
   }
 }

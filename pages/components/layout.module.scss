@@ -1,0 +1,46 @@
+.container {
+  padding: 0;
+}
+
+.header {
+  background: var(--dark-blue);
+  color: #fff;
+  padding: 1em 2em;
+  margin: 0 auto;
+  text-align: center;
+  &Image {
+    width: 6em;
+    height: 6em;
+  }
+  &HomeImage {
+    width: 8em;
+    height: 8em;
+  }
+}
+
+.backToHome {
+  margin: 3em 10%;
+  &Anchor {
+    color: var(--dark-blue);
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    &:before {
+      background: url('../../public/img/undo.svg') no-repeat 0 0;
+      content: "";
+      display: block;
+      height: 50px;
+      margin: 0 -5px 0px;
+      opacity: 1;
+      vertical-align: middle;
+      width: 50px;
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      opacity: 0.6;
+    }
+  }
+}

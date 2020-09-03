@@ -1,14 +1,12 @@
 import Head from 'next/head'
+import Layout, { title } from './components/layout'
+import utilStyles from '../public/sass/utils.module.scss'
+
 
 export default function Home() {
   return (
-    <section className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
+    <Layout home>
+      <div className={utilStyles.wrapper__content}>
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -46,18 +44,7 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-    </section>
+      </div>
+    </Layout>
   )
 }
