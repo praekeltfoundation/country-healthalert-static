@@ -4,11 +4,11 @@ import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
 
 const name = "Home"
-export const title = 'WHO HealthAlert'
+export const title = 'HealthConnect'
 
 function Layout({children, home}) {
   return  (
-    <section className={styles.container}>
+    <>
       <Head>
         <title>{name}</title>
         <link rel="icon" href="favicon.ico" />
@@ -20,13 +20,35 @@ function Layout({children, home}) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      {home && (
-        <header className={styles.header}>
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
-        </header>
-      )}
+      <header className={styles.header}>
+        <div className={`${styles.header__item} ${styles.logo}`}>Logo</div>
+        <div className={`${styles.header__item} ${styles.menu}`}>
+          <ul className={styles.menuList}>
+            <li className={styles.menuList__item}>
+              <a
+                href="https://www.praekelt.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.menuList__anchor}>
+                Praekelt.org
+              </a>
+            </li>
+            <li className={styles.menuList__item}>
+              <a
+                href="https://healthalert.whofreebasics.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.menuList__anchor}>
+                HealthAlert
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className={`${styles.header__item} ${styles.cta}`}>Call to action</div>
+      </header>
 
-      <main role="main">
+
+      <main role="main" className={styles.main}>
         {children}
 
         {!home && (
@@ -48,7 +70,7 @@ function Layout({children, home}) {
           <img src="/img/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
-    </section>
+    </>
   )
 }
 

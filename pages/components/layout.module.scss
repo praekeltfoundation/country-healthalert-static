@@ -1,21 +1,29 @@
-.container {
-  padding: 0;
-}
-
 .header {
-  background: var(--dark-blue);
-  color: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
   padding: 1em 2em;
   margin: 0 auto;
-  text-align: center;
-  &Image {
-    width: 6em;
-    height: 6em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  &__item {
+
   }
-  &HomeImage {
-    width: 8em;
-    height: 8em;
+}
+.logo {}
+.menu {
+  &List {}
+  &List__item {
+    list-style: none;
   }
+}
+.logo {}
+
+.main {
+  padding: 7em 0 0;
 }
 
 .backToHome {
