@@ -21,32 +21,31 @@ function Layout({children, home}) {
       </Head>
 
       <header className={styles.header}>
-        <div className={`${styles.header__item} ${styles.logo}`}>Logo</div>
-        <div className={`${styles.header__item} ${styles.menu}`}>
+        <div className={`${styles.headerItem} ${styles.logo}`}>Healthconnect</div>
+        <div className={`${styles.headerItem} ${styles.menu}`}>
           <ul className={styles.menuList}>
-            <li className={styles.menuList__item}>
+            <li className={styles.menuListItem}>
               <a
                 href="https://www.praekelt.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.menuList__anchor}>
-                Praekelt.org
+                className={styles.menuListAnchor}>
+                About us
               </a>
             </li>
-            <li className={styles.menuList__item}>
+            <li className={styles.menuListItem}>
               <a
                 href="https://healthalert.whofreebasics.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.menuList__anchor}>
-                HealthAlert
+                className={styles.menuListAnchor}>
+                  Healthalert
               </a>
             </li>
           </ul>
         </div>
-        <div className={`${styles.header__item} ${styles.cta}`}>Call to action</div>
+        <div className={`${styles.headerItem} ${styles.cta}`}>Call to action</div>
       </header>
-
 
       <main role="main" className={styles.main}>
         {children}
@@ -60,16 +59,7 @@ function Layout({children, home}) {
         )}
 
       </main>
-      <footer className={utilStyles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/img/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
+      <footer className={utilStyles.footer}></footer>
     </>
   )
 }

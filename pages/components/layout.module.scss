@@ -9,21 +9,50 @@
   top: 0;
   left: 0;
   width: 100%;
-  &__item {
-
+  &Item {
+    display: block;
   }
 }
-.logo {}
+.logo {
+  position: relative;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
 .menu {
-  &List {}
-  &List__item {
-    list-style: none;
+  position: relative;
+  &List {
+    margin: 0;
+    padding: 0;
+    &Item {
+      list-style: none;
+      display: inline-block;
+      margin: 0 1em;
+    }
+    &Anchor {
+      color: #fff;
+      display: block;
+
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
   }
 }
-.logo {}
 
+.cta {
+  display: block;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
 .main {
   padding: 7em 0 0;
+  margin: 7em 0;
 }
 
 .backToHome {
