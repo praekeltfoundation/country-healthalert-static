@@ -2,26 +2,15 @@
   text-align: center;
   padding: 2em 0;
   &__content {
-    padding: 0 0 2em;
+    padding: 7em 0 2em;
     text-align: center;
+    margin-top: 100px;
+    //border: 1px solid red;
     @media only screen and (min-width: 600px) {
+      height: 86vh;
+
     }
   }
-}
-
-
-.container {
-  align-items: center;
-  background: var(--gray-black);
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 .title {

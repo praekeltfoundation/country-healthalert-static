@@ -57,9 +57,25 @@
   }
 }
 .main {
-  padding: 7em 0 0;
-  margin: 7em 0;
+  overflow: auto;
+  position: relative;
 }
+
+.container {
+  align-items: center;
+  background: var(--gray-black);
+  margin: 0 auto;
+  //height: 100%;
+  height: auto;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 
 .backToHome {
   margin: 3em 10%;
