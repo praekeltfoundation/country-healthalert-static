@@ -1,14 +1,19 @@
 .wrapper {
   text-align: center;
   padding: 2em 0;
-  &__content {
-    padding: 7em 0 2em;
-    text-align: center;
-    margin-top: 100px;
-    //border: 1px solid red;
-    @media only screen and (min-width: 600px) {
-      height: 86vh;
 
+  &__content {
+    transition: all 1.2s cubic-bezier(0, .55, .45, 1);
+    background: var(--gray-black);
+    padding: 10em 0 2em 7em;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    @media only screen and (min-width: 600px) {}
+    &Intro {
+      background: #fff;
+      color: var(--gray-black);
+      padding: 10em 15% 7em;
     }
   }
 }
@@ -24,16 +29,22 @@
     display: inline-block;
     font-weight: 500;
   }
+  &Micro {
+    font-size: 36px;
+    margin: 0 0 1em;
+  }
 }
 .subtitle {
   font-size: 65px;
   font-weight: 400;
 }
-
 .description {
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   padding: 2em 0;
+}
+.excerpt {
+  font-size: 18px;
 }
 
 .footer {

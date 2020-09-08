@@ -5,14 +5,20 @@
   height: 100px;
   padding: 1em 2em;
   margin: 0 auto;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 999;
+  //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
+  //transition: top .6s cubic-bezier(0, .55, .45, 1);
+
+  //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
   &Item {
     display: block;
   }
 }
+
 .logo {
   font-family: 'Roboto Slab', serif;
   position: relative;
@@ -56,16 +62,12 @@
     opacity: 0.8;
   }
 }
-.main {
-  overflow: auto;
-  position: relative;
-}
+
 
 .container {
   align-items: center;
   background: var(--gray-black);
   margin: 0 auto;
-  //height: 100%;
   height: auto;
   width: 100%;
   overflow: auto;
@@ -76,6 +78,13 @@
   right: 0;
 }
 
+.main {
+  overflow: auto;
+  position: relative;
+}
+
+
+
 
 .backToHome {
   margin: 3em 10%;
@@ -84,7 +93,6 @@
     display: inline-block;
     font-size: 14px;
     text-transform: uppercase;
-    transition: all 0.2s ease;
     font-weight: 500;
     &:before {
       background: url('../../public/img/undo.svg') no-repeat 0 0;
