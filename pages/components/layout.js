@@ -8,7 +8,7 @@ export const title = 'HealthConnect'
 
 function Layout({children, home}) {
   return  (
-    <>
+    <section className={utilStyles.container} data-aos="fade-up" data-aos-delay="0" >
       <Head>
         <title>{name}</title>
         <link rel="icon" href="favicon.ico" />
@@ -19,12 +19,14 @@ function Layout({children, home}) {
         <meta name="og:title" content={title} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-
-      <header className={styles.header}>
-        <div className={`${styles.headerItem} ${styles.logo}`}>Healthconnect</div>
+      {/*aos-init aos-animate*/}
+      <header className={styles.header} data-aos="fade-right" data-aos-once="true" data-aos-duration="250" data-aos-easing="ease-in-out-quad">
+        <div className={`${styles.headerItem} ${styles.logo}`} data-aos="fade-right" data-aos-once="true" data-aos-duration="250" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
+          <span className={styles.logoName}>HealthConnect</span>
+        </div>
         <div className={`${styles.headerItem} ${styles.menu}`}>
           <ul className={styles.menuList}>
-            <li className={styles.menuListItem}>
+            <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-duration="250" data-aos-delay="150" data-aos-easing="ease-in-out-quad">
               <a
                 href="https://www.praekelt.org/"
                 target="_blank"
@@ -33,7 +35,7 @@ function Layout({children, home}) {
                 About us
               </a>
             </li>
-            <li className={styles.menuListItem}>
+            <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-duration="250" data-aos-delay="200" data-aos-easing="ease-in-out-quad">
               <a
                 href="https://healthalert.whofreebasics.org/"
                 target="_blank"
@@ -44,7 +46,7 @@ function Layout({children, home}) {
             </li>
           </ul>
         </div>
-        <div className={`${styles.headerItem} ${styles.cta}`}>Call to action</div>
+        <div className={`${styles.headerItem} ${styles.cta}`} data-aos="fade-right" data-aos-once="true" data-aos-duration="250" data-aos-delay="250" data-aos-easing="ease-in-out-quad">Call to action</div>
       </header>
 
       <main role="main" className={styles.main}>
@@ -60,7 +62,7 @@ function Layout({children, home}) {
 
       </main>
       <footer className={utilStyles.footer}></footer>
-    </>
+    </section>
   )
 }
 

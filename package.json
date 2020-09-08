@@ -1,7 +1,7 @@
 {
-  "name": "who-static-healthalert",
+  "name": "country-healthalert-static",
   "version": "1.0.0",
-  "description": "WHO HealthAlert SPA",
+  "description": "HealthAlert country rollouts",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -10,17 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/praekeltfoundation/who-static-healthalert.git"
+    "url": "git+https://github.com/praekeltfoundation/country-healthalert-static.git"
   },
-  "keywords": [
-    "WHO"
-  ],
   "author": "Praekelt.org",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/praekeltfoundation/who-static-healthalert/issues"
+    "url": "https://github.com/praekeltfoundation/country-healthalert-static/issues"
   },
-  "homepage": "https://github.com/praekeltfoundation/who-static-healthalert#readme",
+  "homepage": "https://github.com/praekeltfoundation/country-healthalert-static#readme",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "next": "9.3.5",
