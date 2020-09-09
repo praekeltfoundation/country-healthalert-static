@@ -36,7 +36,6 @@ function Layout({children, home}) {
           <meta name="og:title" content={title} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-
         <div className={styles.container} data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in-out-quad">
           <header className={styles.header} show={hideOnScroll} id="header" >
             <div className={`${styles.headerItem} ${styles.logo}`} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
@@ -94,10 +93,11 @@ function Layout({children, home}) {
             )}
 
           </main>
+          <footer className={styles.footer}>
+            <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
+          </footer>
         </div>
-        <footer className={styles.footer}>
-
-        </footer>
+        <div className={styles.scrollCta}></div>
 
         <style jsx>{`
           #header {

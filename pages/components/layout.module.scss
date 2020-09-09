@@ -123,9 +123,60 @@
   }
 }
 
+.scrollCta {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  background: url('../../public/img/white-arrow.png') no-repeat 0 0 / 100%;
+  width: 30px;
+  height: 30px;
+
+  &:before {
+    content: "";
+    animation-name: scroll-wheel;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    height: 5px;
+    width: 5px;
+
+    top: -15px;
+    left: 50%;
+    position: absolute;
+    background: #ffffff;
+    display: block;
+    border-radius: 50%;
+    margin-left: -2px;
+  }
+
+
+}
+
+
+@keyframes scroll-wheel {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+}
 
 .footer {
+  background: #fff;
+  color: #111;
+  padding: 1em 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.copyright {
+  font-size: 12px;
 }
