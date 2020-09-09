@@ -40,32 +40,45 @@ function Layout({children, home}) {
         <div className={styles.container} data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in-out-quad">
           <header className={styles.header} show={hideOnScroll} id="header" >
             <div className={`${styles.headerItem} ${styles.logo}`} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
-              <span className={styles.logoName}>HealthConnect</span>
+              <Link href="/">
+                <a className={styles.logoName}>HealthConnect</a>
+              </Link>
             </div>
             <div className={`${styles.headerItem} ${styles.menu}`}>
               <ul className={styles.menuList}>
                 <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-delay="550" data-aos-easing="ease-in-out-quad">
-                  <a
-                    href="https://www.praekelt.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.menuListAnchor}>
-                    About us
-                  </a>
+                  <Link href="/about">
+                    <a className={styles.menuListAnchor}>About us</a>
+                  </Link>
                 </li>
                 <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-delay="600" data-aos-easing="ease-in-out-quad">
-                  <a
-                    href="https://healthalert.whofreebasics.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.menuListAnchor}>
-                      Healthalert
-                  </a>
+                  <Link href="/countries">
+                    <a className={styles.menuListAnchor}>HealthAlert</a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className={`${styles.headerItem} ${styles.cta}`} data-aos="fade-right" data-aos-once="true" data-aos-delay="650" data-aos-easing="ease-in-out-quad">
-              Call to action
+                <ul className={styles.menuList}>
+                  <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
+                    <a href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
+                      <img
+                        src="/img/facebook-white.png"
+                        alt="Praekelt.org Healthconnect on Facebook"
+                        className={styles.menuListIcon}
+                      />
+                    </a>
+                  </li>
+                  <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
+                    <a href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
+                      <img
+                        src="/img/twitter-white.png"
+                        alt="Praekelt.org Healthconnect on Twitter"
+                        className={styles.menuListIcon}
+                      />
+                    </a>
+                  </li>
+              </ul>
             </div>
           </header>
 

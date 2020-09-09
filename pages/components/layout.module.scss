@@ -30,6 +30,8 @@
     opacity: 0.8;
   }
   &Name {
+    color: #fff;
+    display: inline-block;
     font-size: 20px;
     font-weight: 500;
   }
@@ -42,18 +44,25 @@
     &Item {
       list-style: none;
       display: inline-block;
-      margin: 0 1em;
+      margin: 0 1.5em;
+      &__socialLinks {
+        margin: 0 0.5em;
+      }
     }
     &Anchor {
       color: #fff;
       display: block;
-
       &:hover,
       &:focus {
         opacity: 0.8;
         text-decoration: none;
       }
     }
+    &Icon {
+      height: 25px;
+      width: 25px;
+    }
+
   }
 }
 
