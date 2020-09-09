@@ -10,19 +10,7 @@ export const title = 'HealthConnect'
 
 
 function Layout({children, home}) {
-  const [hideOnScroll, setHideOnScroll] = useState(true)
-  const rendersCount = useRef(0)
 
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      const isShow = currPos.y > prevPos.y
-      if (isShow !== hideOnScroll) setHideOnScroll(isShow)
-    },
-    [hideOnScroll],
-    null,
-    false,
-    300
-  )
   return useMemo(
     () => (
       <>
@@ -37,7 +25,7 @@ function Layout({children, home}) {
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
         <div className={styles.container} data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in-out-quad">
-          <header className={styles.header} show={hideOnScroll} id="header" >
+          <header className={styles.header} id="header" >
             <div className={`${styles.headerItem} ${styles.logo}`} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a className={styles.logoName}>HealthConnect</a>
@@ -98,17 +86,8 @@ function Layout({children, home}) {
           </footer>
         </div>
         <div className={styles.scrollCta}></div>
-
-        <style jsx>{`
-          #header {
-            visibility: ${props => (props.show ? 'visible' : 'hidden')};
-            transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
-            transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
-          }
-        `}</style>
       </>
-    ),
-    [hideOnScroll]
+    )
   )
 }
 

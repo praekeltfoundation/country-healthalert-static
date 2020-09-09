@@ -14,7 +14,6 @@
   width: 100%;
   //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
   //transition: top .6s cubic-bezier(0, .55, .45, 1);
-
   //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
   &Item {
     display: block;
@@ -77,7 +76,6 @@
 
 .container {
   align-items: center;
-  background: var(--gray-black);
   margin: 0 auto;
   height: auto;
   width: 100%;
@@ -106,7 +104,7 @@
     text-transform: uppercase;
     font-weight: 500;
     &:before {
-      background: url('../../public/img/undo.png') no-repeat 0 0 / 100%;
+      background: url('../../public/img/_icons/undo.png') no-repeat 0 0 / 100%;
       content: "";
       display: block;
       height: 50px;
@@ -132,7 +130,7 @@
   right: 0;
   margin: 0 auto;
 
-  background: url('../../public/img/white-arrow.png') no-repeat 0 0 / 100%;
+  background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
   width: 30px;
   height: 30px;
 
@@ -155,8 +153,6 @@
     border-radius: 50%;
     margin-left: -2px;
   }
-
-
 }
 
 
