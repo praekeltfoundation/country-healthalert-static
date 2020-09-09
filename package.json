@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/praekeltfoundation/country-healthalert-static#readme",
   "dependencies": {
-    "aos": "^3.0.0-beta.6",
+    "@n8tb1t/use-scroll-position": "^1.0.43",
+    "aos": "^2.3.4",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",

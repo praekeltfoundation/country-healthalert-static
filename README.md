@@ -1,6 +1,6 @@
-# WHO HealthAlert
+# Country roll outs HealthAlert
 
-A static SPA site for WHO HealthAlert showcasing several country rollouts
+A static SPA site for HealthAlert showcasing several country rollouts
 
 
 ## Live Countries

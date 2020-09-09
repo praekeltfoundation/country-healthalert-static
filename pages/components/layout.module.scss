@@ -5,11 +5,13 @@
   height: 100px;
   padding: 1em 2em;
   margin: 0 auto;
-  position: sticky;
+
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 999;
+
+  width: 100%;
   //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
   //transition: top .6s cubic-bezier(0, .55, .45, 1);
 

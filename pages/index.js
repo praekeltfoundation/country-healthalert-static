@@ -3,6 +3,7 @@ import Layout, { title } from './components/layout'
 import utilStyles from '../public/sass/utils.module.scss'
 
 export default function Home() {
+
   return (
     <Layout home>
       <section className={utilStyles.wrapper__content} data-aos="fade-up" data-aos-once="true" data-aos-delay="350" data-aos-easing="ease-in-out-quad">
