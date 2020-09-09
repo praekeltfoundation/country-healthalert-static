@@ -85,7 +85,6 @@ function Layout({children, home}) {
         {/* */}
         <style jsx>{`
           #header {
-            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.65);
             visibility: ${props => (props.show ? 'visible' : 'hidden')};
             transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
             transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};

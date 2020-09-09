@@ -47,6 +47,26 @@
   font-size: 18px;
 }
 
+
+
+.button {
+  color: #000;
+  display: inline-block;
+  margin: 3em 0;
+  padding: 1em 2em;
+  font-weight: 500;
+
+  &Primary {
+    border-radius: 45px;
+    border: 2px solid var(--gray-black);
+  }
+  &:hover,
+  &:focus {
+    color: var(--lime-green);
+    border-color: var(--lime-green);
+    text-decoration: none;
+  }
+}
 .footer {
   display: flex;
   justify-content: center;

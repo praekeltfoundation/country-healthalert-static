@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout, { title } from './components/layout'
 import utilStyles from '../public/sass/utils.module.scss'
 
@@ -44,6 +45,9 @@ export default function Home() {
             <p>The services can be deployed,
             rapidly as individual services,
             but are most effective when implemented together.</p>
+            <Link href="/about">
+              <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Read more</a>
+            </Link>
           </div>
         </div>
       </section>
