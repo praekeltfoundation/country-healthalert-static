@@ -10,9 +10,12 @@
   --soft-blue: #59a0ee;
   --pure-blue: #0070f3;
   --dark-blue: #004574;
+  --dark-black-blue: #232230; //#1d1d2c
   --grayish-orange: #edecea;
   --lime-green: #63A391;
   --gray-black: #111111;
+  --gray-cyan: #1a1f21;  //#677c84 //#698086
+
 
 }
 
@@ -60,7 +63,35 @@ ul, li {
   margin: 0;
 }
 
+b {
+color: var(--dark-black-blue);
+position: fixed;
+z-index: 9999999999999999;
+}
+//HEADER
 
+.header {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+
+  //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
+  //transition: top .6s cubic-bezier(0, .55, .45, 1);
+  //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
+  &Item {
+    display: block;
+  }
+}
 
 
 //CARD UI

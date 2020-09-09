@@ -9,14 +9,19 @@
     min-height: 100vh;
     @media only screen and (min-width: 600px) {}
     &Intro {
-      background: #fff;
-      color: var(--gray-black);
       padding: 10em 15% 7em;
     }
   }
 
   &__home {
-    background: var(--gray-black) url('../../public/img/_backgrounds/world-map.png') no-repeat 0 0 / cover;
+    background: var(--gray-cyan) url('../../public/img/_backgrounds/world-map.png') no-repeat center center / cover;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    &Section {
+      background: #fff;
+      color: #000;
+    }
   }
 
 }
@@ -53,7 +58,7 @@
 
 
 .banner {
-  color: #fff;
+  color: #fff; //Mindful
   margin: 0 0 1em;
   width: 100%;
   &Countries {
@@ -71,7 +76,7 @@
 }
 
 .button {
-  color: #000;
+  color: #000; //Mindful
   display: inline-block;
   margin: 3em 0;
   padding: 1em 2em;
@@ -79,12 +84,12 @@
 
   &Primary {
     border-radius: 45px;
-    border: 2px solid var(--gray-black);
+    border: 2px solid var(--gray-black); //Mindful
   }
   &:hover,
   &:focus {
-    color: var(--lime-green);
-    border-color: var(--lime-green);
+    color: var(--lime-green); //Mindful
+    border-color: var(--lime-green); //Mindful
     text-decoration: none;
   }
 }

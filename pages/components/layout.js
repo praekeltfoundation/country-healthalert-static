@@ -1,19 +1,33 @@
-import React, { useState, useRef, useEffect, useMemo } from "react"
+import React, { useState, useRef, useMemo, Fragment } from "react"
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Head from 'next/head'
 import Link  from 'next/link'
 import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
+import { Navbar } from '../styles'
 
 const name = "Home"
 export const title = 'HealthConnect'
 
 
-function Layout({children, home}) {
+export default function Layout({children, home}) {
+  const [hideOnScroll, setHideOnScroll] = useState(true)
+  const rendersCount = useRef(0)
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y
+      if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+    },
+    [hideOnScroll],
+    null,
+    false,
+    300
+  )
 
   return useMemo(
     () => (
-      <>
+      <Fragment>
         <Head>
           <title>{name}</title>
           <link rel="icon" href="favicon.ico" />
@@ -24,8 +38,10 @@ function Layout({children, home}) {
           <meta name="og:title" content={title} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <div className={styles.container} data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in-out-quad">
-          <header className={styles.header} id="header" >
+
+        <Navbar show={hideOnScroll}>
+          <b>RENDER COUNT: {++rendersCount.current}</b>
+          <header className="header">
             <div className={`${styles.headerItem} ${styles.logo}`} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a className={styles.logoName}>HealthConnect</a>
@@ -68,7 +84,8 @@ function Layout({children, home}) {
               </ul>
             </div>
           </header>
-
+        </Navbar>
+        <div className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
           <main role="main" className={styles.main}>
             {children}
 
@@ -86,9 +103,10 @@ function Layout({children, home}) {
           </footer>
         </div>
         <div className={styles.scrollCta}></div>
-      </>
-    )
+      </Fragment>
+    ),
+    [hideOnScroll]
   )
 }
 
-export default Layout;
+;

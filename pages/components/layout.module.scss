@@ -1,25 +1,3 @@
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  height: 100px;
-  padding: 1em 2em;
-  margin: 0 auto;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-
-  width: 100%;
-  //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
-  //transition: top .6s cubic-bezier(0, .55, .45, 1);
-  //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
-  &Item {
-    display: block;
-  }
-}
-
 .logo {
   font-family: 'Roboto Slab', serif;
   position: relative;

@@ -17,7 +17,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__contentIntro}`}>
+      <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__homeSection}`}>
         <h3 className={utilStyles.subtitle}>Our responses to</h3>
         <h1 className={utilStyles.title}>COVID-19</h1>
         <p className={utilStyles.description}>
