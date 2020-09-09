@@ -36,7 +36,7 @@ export default function Home() {
             />
           </div>
           <div className="card-ui__item card-ui__item--text">
-            <h4 className={utilStyles.titleMicro}>Introducing HealthConnect</h4>
+            <h4 className={utilStyles.titleMicro}>Introducing HealthAlert</h4>
             <p className={utilStyles.excerpt}>HealthConnect for COVID-19 is a set of interconnected services
             designed to target various aspects of health crises.
             Each service has the powerful potential to
