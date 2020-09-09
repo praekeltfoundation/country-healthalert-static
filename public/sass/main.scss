@@ -70,7 +70,7 @@ z-index: 9999999999999999;
 }
 //HEADER
 
-.header {
+/*.header {
   align-items: center;
   display: flex;
   height: 100px;
@@ -88,10 +88,7 @@ z-index: 9999999999999999;
   //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
   //transition: top .6s cubic-bezier(0, .55, .45, 1);
   //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
-  &Item {
-    display: block;
-  }
-}
+}*/
 
 
 //CARD UI

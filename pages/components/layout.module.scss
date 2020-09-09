@@ -1,4 +1,5 @@
 .logo {
+  display: block;
   font-family: 'Roboto Slab', serif;
   position: relative;
   font-weight: 100;
@@ -14,6 +15,7 @@
   }
 }
 .menu {
+  display: block;
   position: relative;
   &List {
     margin: 0;
