@@ -50,7 +50,7 @@ function Layout({children, home}) {
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
                       <img
-                        src="/img/facebook-white.png"
+                        src="/img/_icons/facebook-white.png"
                         alt="Praekelt.org Healthconnect on Facebook"
                         className={styles.menuListIcon}
                       />
@@ -59,7 +59,7 @@ function Layout({children, home}) {
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
                       <img
-                        src="/img/twitter-white.png"
+                        src="/img/_icons/twitter-white.png"
                         alt="Praekelt.org Healthconnect on Twitter"
                         className={styles.menuListIcon}
                       />
