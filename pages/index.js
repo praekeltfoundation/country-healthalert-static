@@ -29,7 +29,8 @@ export default function Home() {
         </p>
 
         <div className="card-ui">
-          <div className="card-ui__item" data-aos="fade-up" data-aos-once="true" data-aos-delay="350" data-aos-easing="ease-in-out-quad">
+          {/* //data-aos-delay="350" */}
+          <div className="card-ui__item">
             <img
               src="/img/healthconnect-info.png"
               alt="Healthconnect Communication Strategy"

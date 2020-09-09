@@ -139,8 +139,10 @@
   &:before {
     content: "";
     animation-name: scroll-wheel;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
 
     height: 5px;
     width: 5px;
