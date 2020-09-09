@@ -8,59 +8,21 @@ import utilStyles from '../../public/sass/utils.module.scss'
 const name = "Home"
 export const title = 'HealthConnect'
 
-const PositionStore = () => {
-  const [renderCount, triggerReRender] = useState(0)
-  const elementPosition = useRef({ x: 10, y: 150 })
-  const viewportPosition = useRef({ x: 0, y: 0 })
-  let throttleTimeout = null
-
-  const getPos = (el, axis) => Math.round(el.current[axis])
-
-  const setPos = (el, pos) => {
-    el.current = pos
-    if (throttleTimeout !== null) return
-    // Only re-render the component every 0.3s
-    throttleTimeout = setTimeout(() => triggerReRender(renderCount + 1), 300)
-  }
-
-  return {
-    getElementX: () => getPos(elementPosition, 'x'),
-    getElementY: () => getPos(elementPosition, 'y'),
-    getViewportX: () => getPos(viewportPosition, 'x'),
-    getViewportY: () => getPos(viewportPosition, 'y'),
-    setElementPosition: pos => setPos(elementPosition, pos),
-    setViewportPosition: pos => setPos(viewportPosition, pos),
-    renderCount
-  }
-}
 
 function Layout({children, home}) {
-  const positionsStore = PositionStore()
-  const viewportRef = useRef(null)
-  const redBoxRef = useRef(null)
+  const [hideOnScroll, setHideOnScroll] = useState(true)
+  const rendersCount = useRef(0)
 
-  // Viewport scroll position
   useScrollPosition(
-    ({ currPos }) => {
-      positionsStore.setViewportPosition(currPos)
-      const { style } = viewportRef.current
-      style.top = `${150 + currPos.y}px`
-      style.left = `${10 + currPos.x}px`
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y
+      if (isShow !== hideOnScroll) setHideOnScroll(isShow)
     },
-    [positionsStore],
+    [hideOnScroll],
     null,
-    true
-  )
-
-  // Element scroll position
-  useScrollPosition(
-    ({ currPos }) => positionsStore.setElementPosition(currPos),
-    [],
-    redBoxRef,
     false,
     300
   )
-
   return useMemo(
     () => (
       <>
@@ -76,8 +38,7 @@ function Layout({children, home}) {
         </Head>
 
         <div className={styles.container} data-aos="fade-up" data-aos-delay="300" data-aos-easing="ease-in-out-quad">
-          <div ref={redBoxRef}><p>Somedtatatatat</p></div>
-          <header show={true} id="header" className={styles.header}>
+          <header className={styles.header} show={hideOnScroll} id="header" >
             <div className={`${styles.headerItem} ${styles.logo}`} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <span className={styles.logoName}>HealthConnect</span>
             </div>
@@ -120,26 +81,8 @@ function Layout({children, home}) {
             )}
 
           </main>
-          <footer ref={viewportRef} className={utilStyles.footer}>
-            <div>
-            Deferred Rendering:
-            <span>{positionsStore.renderCount}</span>
-            </div>
-            <div>
-              Viewport Scroll:
-              <span>
-                X: {positionsStore.getViewportX()} Y: {positionsStore.getViewportY()}
-              </span>
-            </div>
-            <div>
-              Red Box Scroll:
-              <span>
-                X:{positionsStore.getElementX()} Y:{positionsStore.getElementY()}
-              </span>
-            </div>
-          </footer>
         </div>
-
+        {/* */}
         <style jsx>{`
           #header {
             box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.65);
@@ -150,7 +93,7 @@ function Layout({children, home}) {
         `}</style>
       </>
     ),
-    [positionsStore]
+    [hideOnScroll]
   )
 }
 
