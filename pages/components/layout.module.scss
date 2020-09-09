@@ -98,15 +98,15 @@
 
 
 .backToHome {
-  margin: 3em 10%;
+  background: #fff;
+  padding: 3em 10%;
   &Anchor {
-    color: var(--dark-blue);
     display: inline-block;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;
     &:before {
-      background: url('../../public/img/undo.svg') no-repeat 0 0;
+      background: url('../../public/img/undo.png') no-repeat 0 0 / 100%;
       content: "";
       display: block;
       height: 50px;
@@ -121,4 +121,11 @@
       opacity: 0.6;
     }
   }
+}
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

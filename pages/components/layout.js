@@ -95,7 +95,10 @@ function Layout({children, home}) {
 
           </main>
         </div>
-        {/* */}
+        <footer className={styles.footer}>
+
+        </footer>
+
         <style jsx>{`
           #header {
             visibility: ${props => (props.show ? 'visible' : 'hidden')};
