@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import DataContext from './components/DataContext';
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -17,8 +16,6 @@ export default function App({ Component, pageProps }) {
   });
 
   return (
-    <DataContext.Provider>
-      <Component {...pageProps} />
-    </DataContext.Provider>
+    <Component {...pageProps} />
   )
 }

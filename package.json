@@ -1,23 +1,12 @@
 {
-  "name": "country-healthalert-static",
-  "version": "1.0.0",
-  "description": "HealthAlert country rollouts",
-  "main": "index.js",
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/praekeltfoundation/country-healthalert-static.git"
-  },
-  "author": "Praekelt.org",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/praekeltfoundation/country-healthalert-static/issues"
-  },
-  "homepage": "https://github.com/praekeltfoundation/country-healthalert-static#readme",
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "aos": "^2.3.4",
@@ -25,7 +14,6 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10",
-    "styled-components": "^5.2.0",
-    "swr": "^0.3.2"
+    "styled-components": "^5.2.0"
   }
 }
