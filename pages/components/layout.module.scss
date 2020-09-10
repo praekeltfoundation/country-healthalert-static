@@ -1,20 +1,6 @@
 .header {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  line-height: 1;
-  height: 100px;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 1em 2em;
+  position: relative;
   width: 100%;
-
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 999;
-
   //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
   //transition: top .6s cubic-bezier(0, .55, .45, 1);
   //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
@@ -30,7 +16,6 @@
     opacity: 0.8;
   }
   &Name {
-    color: #fff;
     display: inline-block;
     font-size: 20px;
     font-weight: 500;
@@ -51,7 +36,6 @@
       }
     }
     &Anchor {
-      color: #fff;
       display: block;
       &:hover,
       &:focus {
