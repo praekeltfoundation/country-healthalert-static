@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo, Fragment } from "react"
+import React, { useState, useRef, createRef, useMemo, Fragment } from "react"
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Head from 'next/head'
 import Link  from 'next/link'
@@ -60,18 +60,21 @@ export default function Layout({children, home}) {
       const { style } = viewportRef.current
       style.top = `${150 + currPos.y}px`
       style.left = `${10 + currPos.x}px`
-
-      if(style.top > "150px") {
-        elementRef.current.setAttribute("style", "background: #fff; color: #111");
-      } else {
-        elementRef.current.setAttribute("style", "background: transparent; color:#fff");
-      }
     },
     [positionsStore],
     null,
     true
   )
 
+  console.clear(hideOnScroll)
+  console.log(elementRef)
+  if(elementRef.current !== null) {
+    if(hideOnScroll === true && positionsStore.getViewportY() === 0) {
+      elementRef.current.setAttribute("style", "background: transparent; color: #fff")
+    } else {
+      elementRef.current.setAttribute("style", "background: #fff; color:#111")
+    }
+  }
   return useMemo(
     () => (
       <Fragment>
@@ -90,19 +93,24 @@ export default function Layout({children, home}) {
           <Navbar ref={elementRef} show={hideOnScroll}>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
-                <a style={positionsStore.getViewportY() === 0 && hideOnScroll === true ? {color:"#fff"} : {color:"#111"}} className={styles.logoName}>HealthConnect</a>
+                <a
+                  className={styles.logoName}>
+                    HealthConnect
+                </a>
               </Link>
             </div>
             <div className={styles.menu}>
               <ul className={styles.menuList}>
                 <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-delay="550" data-aos-easing="ease-in-out-quad">
                   <Link href="/about">
-                    <a style={positionsStore.getViewportY() === 0 && hideOnScroll === true ? {color:"#fff"} : {color:"#111"}} className={styles.menuListAnchor}>About us</a>
+                    <a
+                      className={styles.menuListAnchor}>About us</a>
                   </Link>
                 </li>
                 <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-delay="600" data-aos-easing="ease-in-out-quad">
                   <Link href="/countries">
-                    <a style={positionsStore.getViewportY() === 0 && hideOnScroll === true ? {color:"#fff"} : {color:"#111"}} className={styles.menuListAnchor}>HealthAlert</a>
+                    <a
+                      className={styles.menuListAnchor}>HealthAlert</a>
                   </Link>
                 </li>
               </ul>
@@ -110,21 +118,27 @@ export default function Layout({children, home}) {
             <div className={styles.cta} data-aos="fade-right" data-aos-once="true" data-aos-delay="650" data-aos-easing="ease-in-out-quad">
                 <ul className={styles.menuList}>
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
-                    <a style={positionsStore.getViewportY() === 0 && hideOnScroll === true ? {color:"#fff"} : {color:"#111"}} href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
-                      <img
-                        src={positionsStore.getViewportY() === 0 && hideOnScroll === true ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png"}
-                        alt="Praekelt.org Healthconnect on Facebook"
-                        className={styles.menuListIcon}
-                      />
+                    <a
+                      href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
+                      {/*
+                        <img
+                          src={positionsStore.getViewportY() === 0 && hideOnScroll === true ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png"}
+                          alt="Praekelt.org Healthconnect on Facebook"
+                          className={styles.menuListIcon}
+                        />
+                        */}
                     </a>
                   </li>
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
-                    <a style={positionsStore.getViewportY() === 0 && hideOnScroll === true ? {color:"#fff"} : {color:"#111"}} href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
+                    <a
+                      href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
+                      {/*
                       <img
                         src={positionsStore.getViewportY() === 0 && hideOnScroll === true ? "/img/_icons/twitter-white.png" : "/img/_icons/twitter.png"}
                         alt="Praekelt.org Healthconnect on Twitter"
                         className={styles.menuListIcon}
                       />
+                      */}
                     </a>
                   </li>
               </ul>
@@ -133,6 +147,7 @@ export default function Layout({children, home}) {
           {/* ViewportRef to measure element position */}
           <PositionElement ref={viewportRef}></PositionElement>
         </header>
+
 
 
         <div className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
@@ -151,7 +166,7 @@ export default function Layout({children, home}) {
             <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
           </footer>
         </div>
-        <div className={styles.scrollCta}></div>
+        {home && ( <div className={styles.scrollCta}></div> )}
       </Fragment>
     ),
     [hideOnScroll],

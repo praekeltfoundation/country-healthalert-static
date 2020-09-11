@@ -24,6 +24,12 @@
       color: #000;
     }
   }
+  &__about,
+  &__countries {
+    color: var(--gray-black);
+    height: auto;
+    width: 100%;
+  }
 
 }
 
@@ -68,7 +74,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10% 0 0;
+    padding: 10% 15% 0;
   }
   &Content {
     margin: 20% 0 0;

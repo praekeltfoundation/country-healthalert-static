@@ -83,6 +83,36 @@ z-index: 9999999999999999;
     }
   }
 }
+
 .numCounter {
   position: sticky;
+}
+
+
+.grid {
+  align-items: center;
+  color: var(--gray-black);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+
+  &-item {
+    //border: 1px solid #F7F7F7;
+    border-radius: 5px;
+    margin: 0 2em 4em;
+    padding: 1em;
+    width: 25%;
+    &--width2 {
+      width: 50%;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    margin: 0 0 0.5em;
+  }
+  &__thumbnail {
+    margin: 0 0 1em;
+  }
+  &__excerpt {}
 }
