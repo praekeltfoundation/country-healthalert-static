@@ -8,7 +8,7 @@ export default function Countries() {
   return (
     <Layout countries>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__countries}`}>
-        <div className={`${utilStyles.banner} ${utilStyles.bannerCountries}`}>
+        <div className={utilStyles.banner}>
           <h3 className={utilStyles.subtitle}>HealthConnect <br/>Implementation</h3>
           <p className={utilStyles.description}>
             Countries and organisations that are using one or a

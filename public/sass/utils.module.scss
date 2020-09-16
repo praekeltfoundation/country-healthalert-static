@@ -31,11 +31,19 @@
       color: #000;
     }
   }
-  &__about,
+  &__about {
+    color: var(--gray-black);
+    height: auto;
+    width: 100%;
+  }
   &__countries {
     color: var(--gray-black);
     height: auto;
     width: 100%;
+    background: url('../../public/img/_backgrounds/banner-bg.png') no-repeat 0 0 / 100%;
+    @media (min-width: 375px) {
+      //height: 70vh;
+    }
   }
 
 }
@@ -91,17 +99,15 @@
   color: #fff; //Mindful
   margin: 0 0 1em;
   width: 100%;
-  &Countries {
-    background: url('../../public/img/_backgrounds/banner-bg.png') no-repeat 0 0 / 100%;
-
-    @media (min-width: 375px) {
-      height: 70vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 10% 15% 0;
-    }
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 7em 1em 0;
+  @media (min-width: 375px) {
+    padding: 7em 15% 0;
   }
+
   &Content {
     margin: 1em 0 0;
     position: relative;

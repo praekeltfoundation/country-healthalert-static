@@ -111,14 +111,18 @@ z-index: 9999999999999999;
   &-item {
     //border: 1px solid #F7F7F7;
     border-radius: 5px;
-    margin: 0 2em;
     padding: 1em;
-    width: 25%;
+    width: auto;
     @media (min-width: 375px) {
       margin: 0 2em 4em;
+      width: 20%;
     }
     &--width2 {
-      width: 50%;
+      width: auto;
+      @media (min-width: 375px) {
+        margin: 0 2em 4em;
+        width: 50%;
+      }
     }
   }
   &__title {

@@ -137,11 +137,11 @@
 .scrollCta {
   cursor: pointer;
   display: block;
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  // position: absolute;
+  // bottom: 1em;
+  // left: 0;
+  // right: 0;
+  // margin: 0 auto;
 
   background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
   width: 30px;
@@ -158,9 +158,9 @@
     height: 5px;
     width: 5px;
 
-    top: -15px;
-    left: 50%;
-    position: absolute;
+    // top: -15px;
+    // left: 50%;
+    // position: absolute;
     background: #ffffff;
     display: block;
     border-radius: 50%;
