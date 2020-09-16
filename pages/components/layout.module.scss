@@ -9,8 +9,12 @@
 .logo {
   display: block;
   font-family: 'Roboto Slab', serif;
+  margin: 0 0 1.5em;
   position: relative;
   font-weight: 100;
+  @media (min-width: 375px) {
+    margin: 0;
+  }
   &:hover,
   &:focus {
     opacity: 0.8;
@@ -24,15 +28,26 @@
 .menu {
   display: block;
   position: relative;
+  margin: 0 0 1.5em;
+  @media (min-width: 375px) {
+    margin: 0;
+  }
   &List {
     margin: 0;
     padding: 0;
     &Item {
       list-style: none;
       display: inline-block;
-      margin: 0 1.5em;
+      margin: 0 0.5em;
+      @media (min-width: 375px) {
+        margin: 0 1.5em;
+      }
+
       &__socialLinks {
         margin: 0 0.5em;
+        @media (min-width: 375px) {
+          margin: 0 0.5em 0.5em;
+        }
       }
     }
     &Anchor {
@@ -53,6 +68,10 @@
 
 .cta {
   display: block;
+  margin: 0 0 1.5em;
+  @media (min-width: 375px) {
+    margin: 0;
+  }
   &:hover,
   &:focus {
     opacity: 0.8;

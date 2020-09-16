@@ -4,14 +4,13 @@ const NavbarBase = styled.nav`
   align-items: center;
   display: flex;
   flex-wrap: nowrap;
-
+  flex-direction: column;
   position: relative;
-
   line-height: 1;
   height: 100px;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 1em 2em;
+  padding: 1em;
   width: 100%;
 
   position: fixed;
@@ -19,6 +18,10 @@ const NavbarBase = styled.nav`
   right: 0;
   left: 0;
   z-index: 999;
+  @media (min-width: 375px) {
+    flex-direction: row;
+    padding: 1em 2em;
+  }
 `
 
 /*

@@ -86,6 +86,7 @@ export default function Layout({children, home}) {
           <meta name="og:title" content={title} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
+
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
           <Navbar ref={elementRef} show={hideOnScroll}>
@@ -147,11 +148,9 @@ export default function Layout({children, home}) {
         </header>
 
 
-
-        <div className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
-          <main role="main" className={styles.main}>
+        <main role="main" className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
+          <div className={styles.main}>
             {children}
-
             {!home && (
               <div className={styles.backToHome}>
                 <Link href="/">
@@ -159,12 +158,12 @@ export default function Layout({children, home}) {
                 </Link>
               </div>
             )}
-          </main>
-          <footer className={styles.footer}>
-            <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
-          </footer>
-        </div>
+          </div>
+        </main>
         {home && ( <div className={styles.scrollCta}></div> )}
+        <footer className={styles.footer}>
+          <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
+        </footer>
       </Fragment>
     ),
     [hideOnScroll],
