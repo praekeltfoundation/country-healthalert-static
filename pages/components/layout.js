@@ -5,8 +5,6 @@ import Link  from 'next/link'
 import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
 
-import { Navbar, PositionElement } from '../styles'
-
 const name = "Home"
 export const title = 'HealthConnect'
 const PositionStore = () => {
@@ -90,7 +88,7 @@ export default function Layout({children, home}) {
         </Head>
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
-          <Navbar ref={elementRef} show={hideOnScroll}>
+
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a
@@ -143,9 +141,8 @@ export default function Layout({children, home}) {
                   </li>
               </ul>
             </div>
-          </Navbar>
-          {/* ViewportRef to measure element position */}
-          <PositionElement ref={viewportRef}></PositionElement>
+
+
         </header>
 
 
