@@ -34,9 +34,20 @@ export const Navbar = styled(NavbarBase)`
   transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
 `
 export const PositionElement = styled.div`
+  border: 1px solid red;
   position: absolute;
   padding: 15px;
-  top: 150px;
+  top: 0;
   left: 10px;
   z-index: 9999999;
+`
+
+export const RedBox = styled.div`
+  background: red;
+  color: white;
+  position: absolute;
+  padding: 15px;
+  top: 190px;
+  left: 10px;
+  z-index: 999;
 `

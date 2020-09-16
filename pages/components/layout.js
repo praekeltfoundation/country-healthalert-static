@@ -4,10 +4,15 @@ import Head from 'next/head'
 import Link  from 'next/link'
 import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
-import { Navbar, PositionElement } from '../styles'
-const name = "Home"
+
+
+import { Navbar, PositionElement, RedBox } from '../styles'
+
+
+export const name = "Home"
 export const title = 'HealthConnect'
-const PositionStore = () => {
+
+export const PositionStore = () => {
   const [renderCount, triggerReRender] = useState(0)
   const elementPosition = useRef({ x: 10, y: 150 })
   const viewportPosition = useRef({ x: 0, y: 0 })
@@ -33,17 +38,20 @@ const PositionStore = () => {
   }
 }
 
+
 export default function Layout({children, home}) {
   const [hideOnScroll, setHideOnScroll] = useState(true)
   const positionsStore = PositionStore()
+  const rendersCount = useRef(0)
   const viewportRef = useRef(null)
-  const elementRef = useRef(null)
+  const redBoxRef = useRef(null)
 
-  // Navbar show / hide
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isShow = currPos.y > prevPos.y
-      if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+      if (isShow !== hideOnScroll) {
+        setHideOnScroll(isShow)
+      }
     },
     [hideOnScroll],
     null,
@@ -56,7 +64,7 @@ export default function Layout({children, home}) {
     ({ currPos }) => {
       positionsStore.setViewportPosition(currPos)
       const { style } = viewportRef.current
-      style.top = `${150 + currPos.y}px`
+      style.top = `${0 + currPos.y}px`
       style.left = `${10 + currPos.x}px`
     },
     [positionsStore],
@@ -64,20 +72,21 @@ export default function Layout({children, home}) {
     true
   )
 
-  console.clear(hideOnScroll)
-  console.log(elementRef)
-  if(elementRef.current !== null) {
-    if(hideOnScroll === true && positionsStore.getViewportY() === 0) {
-      elementRef.current.setAttribute("style", "background: transparent; color: #fff")
-    } else {
-      elementRef.current.setAttribute("style", "background: #fff; color:#111")
-    }
-  }
+  // Element scroll position
+  useScrollPosition(
+    ({ currPos }) => positionsStore.setElementPosition(currPos),
+    [],
+    redBoxRef,
+    false,
+    300
+  )
+
+console.log(positionsStore.getElementY())
   return useMemo(
     () => (
       <Fragment>
         <Head>
-          <title>{name}</title>
+          <title>{name} - {title}</title>
           <link rel="icon" href="favicon.ico" />
           <meta
             name="description"
@@ -89,12 +98,12 @@ export default function Layout({children, home}) {
 
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
-          <Navbar ref={elementRef} show={hideOnScroll}>
+          <Navbar show={hideOnScroll}>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a
                   className={styles.logoName}>
-                    HealthConnect
+                    {title}
                 </a>
               </Link>
             </div>
@@ -119,33 +128,22 @@ export default function Layout({children, home}) {
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a
                       href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
-                      {/*
-                        <img
-                          src={positionsStore.getViewportY() === 0 && hideOnScroll === true ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png"}
-                          alt="Praekelt.org Healthconnect on Facebook"
-                          className={styles.menuListIcon}
-                        />
-                        */}
+
                     </a>
                   </li>
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a
                       href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
-                      {/*
-                      <img
-                        src={positionsStore.getViewportY() === 0 && hideOnScroll === true ? "/img/_icons/twitter-white.png" : "/img/_icons/twitter.png"}
-                        alt="Praekelt.org Healthconnect on Twitter"
-                        className={styles.menuListIcon}
-                      />
-                      */}
+
                     </a>
                   </li>
               </ul>
             </div>
           </Navbar>
-          {/* ViewportRef to measure element position */}
-          <PositionElement ref={viewportRef}></PositionElement>
         </header>
+        <p>{positionsStore.getViewportY() <= 190 ? "True" :"False"}</p>
+        <RedBox ref={redBoxRef}></RedBox>
+        <PositionElement ref={viewportRef}></PositionElement>
 
 
         <main role="main" className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
@@ -166,7 +164,7 @@ export default function Layout({children, home}) {
         </footer>
       </Fragment>
     ),
-    [hideOnScroll],
+    [hideOnScroll]
     [positionsStore]
   )
 }
