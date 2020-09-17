@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+//NAV STYLES
 const NavbarBase = styled.nav`
   align-items: center;
   display: flex;
@@ -23,31 +24,30 @@ const NavbarBase = styled.nav`
     padding: 1em 2em;
   }
 `
-
-/*
-  transition: background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1);
-*/
-
 export const Navbar = styled(NavbarBase)`
   visibility: ${props => (props.show ? 'visible' : 'hidden')};
   transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
   transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
 `
-export const PositionElement = styled.div`
-  border: 1px solid red;
-  position: absolute;
-  padding: 15px;
-  top: 0;
+
+//POSITION MEASUREMENT STYLES
+export const ViewportPositionElement = styled.div`
+  background: #000;
   left: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  opacity: 0;
   z-index: 9999999;
 `
 
-export const RedBox = styled.div`
-  background: red;
+export const PositionElement = styled.div`
+  background: #000;
   color: white;
-  position: absolute;
-  padding: 15px;
-  top: 190px;
   left: 10px;
+  padding: 15px;
+  position: absolute;
+  opacity: 0;
+  top: 190px;
   z-index: 999;
 `

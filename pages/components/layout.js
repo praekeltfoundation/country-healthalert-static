@@ -6,12 +6,10 @@ import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
 
 
-import { Navbar, PositionElement, RedBox } from '../styles'
-
+import { Navbar, ViewportPositionElement, PositionElement } from '../styles'
 
 export const name = "Home"
 export const title = 'HealthConnect'
-
 export const PositionStore = () => {
   const [renderCount, triggerReRender] = useState(0)
   const elementPosition = useRef({ x: 10, y: 150 })
@@ -44,8 +42,9 @@ export default function Layout({children, home}) {
   const positionsStore = PositionStore()
   const rendersCount = useRef(0)
   const viewportRef = useRef(null)
-  const redBoxRef = useRef(null)
+  const elemRef = useRef(null)
 
+  //Navbar fade in/out animation
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isShow = currPos.y > prevPos.y
@@ -76,12 +75,11 @@ export default function Layout({children, home}) {
   useScrollPosition(
     ({ currPos }) => positionsStore.setElementPosition(currPos),
     [],
-    redBoxRef,
+    elemRef,
     false,
     300
   )
 
-console.log(positionsStore.getElementY())
   return useMemo(
     () => (
       <Fragment>
@@ -98,7 +96,7 @@ console.log(positionsStore.getElementY())
 
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
-          <Navbar show={hideOnScroll}>
+          <Navbar show={hideOnScroll} className={positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a
@@ -128,22 +126,30 @@ console.log(positionsStore.getElementY())
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a
                       href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
-
+                      <img
+                        src={positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
+                        alt="Praekelt.org Healthconnect on Facebook"
+                        className={styles.menuListIcon}
+                      />
                     </a>
                   </li>
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a
                       href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
-
+                      <img
+                        src={positionsStore.getViewportY() <= 190 ? "/img/_icons/twitter-white.png" : " /img/_icons/twitter.png"}
+                        alt="Praekelt.org Healthconnect on Twitter"
+                        className={styles.menuListIcon}
+                      />
                     </a>
                   </li>
               </ul>
             </div>
           </Navbar>
         </header>
-        <p>{positionsStore.getViewportY() <= 190 ? "True" :"False"}</p>
-        <RedBox ref={redBoxRef}></RedBox>
-        <PositionElement ref={viewportRef}></PositionElement>
+
+        <PositionElement ref={elemRef}></PositionElement>
+        <ViewportPositionElement ref={viewportRef}></ViewportPositionElement>
 
 
         <main role="main" className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
