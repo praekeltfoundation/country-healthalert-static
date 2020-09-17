@@ -1,0 +1,22 @@
+name: Node build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        npm install
+
+      - name: Build
+        npm run export
+
+      - name: Deploy
+        uses: reggionick/s3-deploy@v2
+        with:
+          folder: out
+          
