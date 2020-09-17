@@ -82,7 +82,7 @@ export const PositionStore = () => {
 export const name = "Home"
 export const title = 'HealthConnect'
 
-export default function Layout({children, home}) {
+export default function Layout({children, transparent}) {
   const [hideOnScroll, setHideOnScroll] = useState(true)
   const positionsStore = PositionStore()
   const rendersCount = useRef(0)
@@ -141,7 +141,7 @@ export default function Layout({children, home}) {
 
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
-          <Navbar id={ home ? "navigation_home" : "navigation"} show={hideOnScroll} className={positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }>
+          <Navbar show={hideOnScroll} className={transparent && positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a
@@ -172,7 +172,7 @@ export default function Layout({children, home}) {
                     <a
                       href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
                       <img
-                        src={positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
+                        src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
                         alt="Praekelt.org Healthconnect on Facebook"
                         className={styles.menuListIcon}
                       />
@@ -182,7 +182,7 @@ export default function Layout({children, home}) {
                     <a
                       href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
                       <img
-                        src={positionsStore.getViewportY() <= 190 ? "/img/_icons/twitter-white.png" : " /img/_icons/twitter.png"}
+                        src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/twitter-white.png" : " /img/_icons/twitter.png"}
                         alt="Praekelt.org Healthconnect on Twitter"
                         className={styles.menuListIcon}
                       />
@@ -200,7 +200,7 @@ export default function Layout({children, home}) {
         <main role="main" className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
           <div className={styles.main}>
             {children}
-            {!home && (
+            {!transparent && (
               <div className={styles.backToHome}>
                 <Link href="/">
                   <a className={styles.backToHomeAnchor}>Back</a>
@@ -209,7 +209,7 @@ export default function Layout({children, home}) {
             )}
           </div>
         </main>
-        {home && ( <div className={styles.scrollCta}></div> )}
+        {transparent && ( <div className={styles.scrollCta}></div> )}
         <footer className={styles.footer}>
           <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
         </footer>

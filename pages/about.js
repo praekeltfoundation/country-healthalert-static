@@ -6,7 +6,7 @@ import utilStyles from '../public/sass/utils.module.scss'
 export default function About() {
 
   return (
-    <Layout about>
+    <Layout>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__about}`} data-aos="fade-up" data-aos-once="true" data-aos-delay="350" data-aos-easing="ease-in-out-quad">
         <h1 className={utilStyles.title}>Health</h1>
         <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>Connect</h2>
