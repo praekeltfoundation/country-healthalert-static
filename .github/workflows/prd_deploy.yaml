@@ -1,8 +1,8 @@
-name: Node Build
+name: PRD Build
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,4 +19,6 @@ jobs:
         uses: reggionick/s3-deploy@v2
         with:
           folder: out
-          
+          bucket: ${{ secrets.S3_PRD_BUCKET }}
+          bucket-region: ${{ secrets.S3_PRD_BUCKET_REGION }}
+          dist-id: ${{ secrets.PRD_CLOUDFRONT_DISTRIBUTION_ID }}
