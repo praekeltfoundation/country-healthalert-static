@@ -1,8 +1,10 @@
-name: Node build
+name: Node Export
+
 on:
   push:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
