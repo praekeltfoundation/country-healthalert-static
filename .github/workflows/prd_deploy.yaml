@@ -6,6 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.PRD_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.PRD_AWS_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v2
 
@@ -19,6 +22,6 @@ jobs:
         uses: reggionick/s3-deploy@v2
         with:
           folder: out
-          bucket: ${{ secrets.S3_PRD_BUCKET }}
-          bucket-region: ${{ secrets.S3_PRD_BUCKET_REGION }}
+          bucket: ${{ secrets.PRD_S3_BUCKET }}
+          bucket-region: ${{ secrets.PRD_S3_BUCKET_REGION }}
           dist-id: ${{ secrets.PRD_CLOUDFRONT_DISTRIBUTION_ID }}
