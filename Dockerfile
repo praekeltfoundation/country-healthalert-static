@@ -11,6 +11,3 @@ RUN npm run export
 FROM nginx:alpine
 
 COPY --from=node app/out /usr/share/nginx/html
-
-# Copy nginx vhost directives
-COPY nginx/conf.d /etc/nginx/conf.d
