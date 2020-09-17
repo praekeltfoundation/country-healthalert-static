@@ -35,7 +35,7 @@ export default function About() {
           </div>
           <div className="card-ui__item">
             <img
-              src="/img/WHO-covid.png"
+              src="/img/WHO-covid2.png"
               alt="Healthconnect Communication Strategy"
             />
           </div>

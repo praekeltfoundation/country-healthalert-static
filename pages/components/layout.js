@@ -141,7 +141,7 @@ export default function Layout({children, home}) {
 
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
-          <Navbar show={hideOnScroll} className={positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }>
+          <Navbar id={ home ? "navigation_home" : "navigation"} show={hideOnScroll} className={positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a

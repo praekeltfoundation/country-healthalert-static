@@ -15,6 +15,8 @@
   --lime-green: #63A391;
   --gray-black: #111111;
   --gray-cyan: #1a1f21;  //#677c84 //#698086
+  --light-gray: #ebebeb;
+  --very-light-gray: #f7f7f7;
 }
 
 * {
@@ -23,6 +25,7 @@
 
 html,
 body {
+  background: var(--very-light-gray);
   color: #fff;
   padding: 0;
   margin: 0;
@@ -73,7 +76,6 @@ z-index: 9999999999999999;
   flex-direction: column;
   text-align: left;
   font-size: 18px;
-  justify-content: space-between;
   @media (min-width: 375px) {
     flex-direction: row;
   }
@@ -85,7 +87,9 @@ z-index: 9999999999999999;
       margin: 5em 0 0;
     }
     &--text {
+
       @media (min-width: 375px) {
+        width: 55%;
         padding: 0 2em 0;
       }
     }

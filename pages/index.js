@@ -29,10 +29,9 @@ export default function Home() {
         </p>
 
         <div className="card-ui">
-          {/* //data-aos-delay="350" */}
-          <div className="card-ui__item">
+          <div className="card-ui__item" data-aos-delay="350">
             <img
-              src="/img/healthconnect-info.png"
+              src="/img/WHO-covid2.png"
               alt="Healthconnect Communication Strategy"
             />
           </div>
