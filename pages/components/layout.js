@@ -2,14 +2,58 @@ import React, { useState, useRef, createRef, useMemo, Fragment } from "react"
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Head from 'next/head'
 import Link  from 'next/link'
+import styled from 'styled-components'
 import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
 
+const NavbarBase = styled.nav`
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  position: relative;
+  line-height: 1;
+  height: 100px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
 
-import { Navbar, ViewportPositionElement, PositionElement } from '../styles'
-
-export const name = "Home"
-export const title = 'HealthConnect'
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  @media (min-width: 375px) {
+    flex-direction: row;
+    padding: 1em 2em;
+  }
+`;
+export const Navbar = styled(NavbarBase)`
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
+  transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+  transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
+`;
+//POSITION MEASUREMENT STYLES
+export const ViewportPositionElement = styled.div`
+  background: #000;
+  left: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: 9999999;
+`;
+export const PositionElement = styled.div`
+  background: #000;
+  color: white;
+  left: 10px;
+  padding: 15px;
+  position: absolute;
+  opacity: 0;
+  top: 190px;
+  z-index: 999;
+`;
 export const PositionStore = () => {
   const [renderCount, triggerReRender] = useState(0)
   const elementPosition = useRef({ x: 10, y: 150 })
@@ -35,7 +79,8 @@ export const PositionStore = () => {
     renderCount
   }
 }
-
+export const name = "Home"
+export const title = 'HealthConnect'
 
 export default function Layout({children, home}) {
   const [hideOnScroll, setHideOnScroll] = useState(true)
