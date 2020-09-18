@@ -6,11 +6,11 @@
   }
   &__content {
     transition: all 1.2s cubic-bezier(0, .55, .45, 1);
-    padding: 7em 1em 0;
+    padding: 12em 1em 0;
     text-align: center;
     position: relative;
     @media (min-width: 375px) {
-      padding: 10em 0 2em 7em;
+      padding: 10em 2em 7em;
       min-height: 100vh;
     }
     &Intro {
@@ -25,10 +25,19 @@
     background: var(--gray-cyan) url('../../public/img/_backgrounds/world-map.png') no-repeat center center / cover;
     color: #fff;
     height: auto;
+    padding: 12em 1em 0;
     width: 100%;
+    @media (min-width: 375px) {
+      padding: 12em 2em 7em;
+      min-height: 100vh;
+    }
     &Section {
-      background: #EBEBEB;
+      padding: 5em 1em 0;
+      background: var(--very-light-gray);
       color: #000;
+      @media (min-width: 375px) {
+        padding: 5em 2em 7em;
+      }
     }
   }
   &__about {
@@ -41,16 +50,14 @@
     height: auto;
     width: 100%;
     background: url('../../public/img/_backgrounds/banner-bg.png') no-repeat 0 0 / 100%;
-    @media (min-width: 375px) {
-      //height: 70vh;
-    }
   }
 
 }
 
+
 .title {
   display: inline-block;
-  font-size: 73px;
+  font-size: 63px;
   font-weight: 100;
   margin: 0;
   text-align: center;
@@ -86,6 +93,14 @@
     padding: 2em 0;
   }
 }
+
+.caption {
+  padding: 2em 0 0;
+  @media (min-width: 375px) {
+    padding: 2em 7em 0;
+  }
+}
+
 .excerpt {
   font-size: 1em;
   @media (min-width: 375px) {
@@ -96,7 +111,7 @@
 
 
 .banner {
-  color: #fff; //Mindful
+  color: #fff;
   margin: 0 0 1em;
   width: 100%;
   height: auto;
@@ -118,7 +133,7 @@
 }
 
 .button {
-  color: #000; //Mindful
+  color: #000;
   display: inline-block;
   margin: 2em 0;
   padding: 1em;
@@ -130,12 +145,12 @@
 
   &Primary {
     border-radius: 45px;
-    border: 2px solid var(--gray-black); //Mindful
+    border: 2px solid var(--gray-black);
   }
   &:hover,
   &:focus {
-    color: var(--lime-green); //Mindful
-    border-color: var(--lime-green); //Mindful
+    color: var(--lime-green);
+    border-color: var(--lime-green);
     text-decoration: none;
   }
 }

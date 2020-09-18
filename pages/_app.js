@@ -6,14 +6,7 @@ import '../public/sass/main.scss'
 
 export default function App({ Component, pageProps }) {
 
-
   useEffect(() => {
-
-    new Masonry(".grid", {
-      itemSelector: ".grid-item",
-      layoutMode: "fitRows"
-    })
-
     if (!window.Cypress) {
       AOS.init({
         startEvent: 'DOMContentLoaded',

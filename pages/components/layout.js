@@ -7,18 +7,6 @@ import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
 
 const NavbarBase = styled.nav`
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  position: relative;
-  line-height: 1;
-  height: 100px;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 1em;
-  width: 100%;
-
   position: fixed;
   top: 0;
   right: 0;
@@ -82,7 +70,7 @@ export const PositionStore = () => {
 export const name = "Home"
 export const title = 'HealthConnect'
 
-export default function Layout({children, transparent}) {
+export default function Layout({children, transparent, home}) {
   const [hideOnScroll, setHideOnScroll] = useState(true)
   const positionsStore = PositionStore()
   const rendersCount = useRef(0)
@@ -141,7 +129,7 @@ export default function Layout({children, transparent}) {
 
         {/* TO CLEAN UP CODE */}
         <header className={styles.header}>
-          <Navbar show={hideOnScroll} className={transparent && positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }>
+          <Navbar show={hideOnScroll} className={`${styles.nav} ${transparent && positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }`}>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
               <Link href="/">
                 <a
@@ -209,7 +197,7 @@ export default function Layout({children, transparent}) {
             )}
           </div>
         </main>
-        {transparent && ( <div className={styles.scrollCta}></div> )}
+        {home && ( <div className={styles.scrollCta}></div> )}
         <footer className={styles.footer}>
           <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
         </footer>

@@ -14,7 +14,6 @@
       color: #000;
     }
   }
-
   &Black {
     background-color: transparent;
     a {
@@ -29,9 +28,6 @@
   margin: 0 0 1.5em;
   position: relative;
   font-weight: 100;
-  @media (min-width: 375px) {
-    margin: 0;
-  }
   &:hover,
   &:focus {
     opacity: 0.8;
@@ -42,13 +38,26 @@
     font-weight: 500;
   }
 }
+
+.nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  @media (min-width: 375px) {
+    height: 100px;
+  }
+}
+
 .menu {
   display: block;
   position: relative;
   margin: 0 0 1.5em;
-  @media (min-width: 375px) {
-    margin: 0;
-  }
   &List {
     margin: 0;
     padding: 0;
@@ -86,9 +95,6 @@
 .cta {
   display: block;
   margin: 0 0 1.5em;
-  @media (min-width: 375px) {
-    margin: 0;
-  }
   &:hover,
   &:focus {
     opacity: 0.8;
@@ -122,12 +128,39 @@
   position: relative;
 }
 
-
-
+.scrollCta {
+  cursor: pointer;
+  display: block;
+  background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &:before {
+    animation-name: scroll-wheel;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    background-color: var(--very-light-gray);
+    content: "";
+    height: 5px;
+    width: 5px;
+    top: -15px;
+    left: 50%;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    margin-left: -2px;
+  }
+}
 
 .backToHome {
   background: var(--very-light-gray);
-  padding: 3em 10%;
+  padding: 4em 10%;
   &Anchor {
     display: inline-block;
     font-size: 14px;
@@ -151,45 +184,6 @@
   }
 }
 
-.scrollCta {
-  cursor: pointer;
-  display: block;
-  background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
-  width: 30px;
-  height: 30px;
-
-  &:before {
-    content: "";
-    animation-name: scroll-wheel;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    -webkit-animation-delay: 3s;
-    animation-delay: 3s;
-
-    height: 5px;
-    width: 5px;
-
-    top: -15px;
-    left: 50%;
-    position: absolute;
-    display: block;
-    border-radius: 50%;
-    margin-left: -2px;
-  }
-}
-
-@keyframes scroll-wheel {
-  from {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-  to {
-    transform: translate3d(0, 10px, 0);
-    opacity: 0;
-  }
-}
-
-
 
 .footer {
   background: var(--very-light-gray);
@@ -201,4 +195,15 @@
 }
 .copyright {
   font-size: 12px;
+}
+
+@keyframes scroll-wheel {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
 }
