@@ -1,9 +1,13 @@
+import { useContext } from 'react';
+import DataContext from './components/DataContext';
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { title } from './components/layout'
 import utilStyles from '../public/sass/utils.module.scss'
 
-export default function Countries() {
+function Countries() {
+  const { data } = useContext(DataContext);
+  console.log('Get data here:', data)
 
   return (
     <Layout transparent>
@@ -83,3 +87,5 @@ export default function Countries() {
     </Layout>
   )
 }
+
+export default Countries

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react"
+import DataContext from './components/DataContext';
+
 import Masonry from 'react-masonry-component';
 import AOS from 'aos'
+
+import { getSortedPostsData } from '../lib/country'
+
 import 'aos/dist/aos.css'
 import '../public/sass/main.scss'
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps, data }) {
 
   useEffect(() => {
     if (!window.Cypress) {
@@ -17,6 +22,15 @@ export default function App({ Component, pageProps }) {
   });
 
   return (
-    <Component {...pageProps} />
+    <DataContext.Provider value={{ data }}>
+      <Component {...pageProps} data={ data } />
+    </DataContext.Provider>
   )
 }
+
+App.getInitialProps = async (context) => {
+  const allPostsData = getSortedPostsData()
+  return { data: allPostsData }
+}
+
+export default App
