@@ -1,3 +1,7 @@
+import fse from 'fs-extra'
+import path from 'path'
+import matter from 'gray-matter'
+
 import React, { useState, useEffect } from "react"
 import DataContext from './components/DataContext';
 
@@ -29,8 +33,34 @@ function App({ Component, pageProps, data }) {
 }
 
 App.getInitialProps = async (context) => {
-  const allPostsData = getSortedPostsData()
-  return { data: allPostsData }
+
+  const postsDirectory = path.join(process.cwd(), 'country');
+  const allData = function getSortedPostsData() {
+    // Get file names under /posts
+    const fileNames = fse.readdirSync(postsDirectory)
+
+    const allPostsData = fileNames.map(fileName => {
+      // Remove ".md" from file name to get id
+      const id = fileName.replace(/\.md$/, '')
+
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName)
+      const fileContents = fse.readFileSync(fullPath, 'utf8')
+
+      // Use gray-matter to parse the post metadata section
+      const matterResult = matter(fileContents)
+
+      // Combine the data with the id
+      return {
+        id,
+        ...matterResult.data
+      }
+    })
+
+    return allPostsData;
+  }
+
+  return { data: allData }
 }
 
 export default App
