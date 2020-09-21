@@ -9,7 +9,7 @@ export default function Countries() {
     <Layout transparent>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__countries}`}>
         <div className={utilStyles.banner}>
-          <h3 className={utilStyles.subtitle}>HealthConnect <br/>Implementation</h3>
+          <h3 className={utilStyles.subtitle}>HealthAlert <br/>Implementation</h3>
           <p className={utilStyles.description}>
             Countries and organisations that are using one or a
             combination of these services include the World Health Organisation
@@ -22,9 +22,10 @@ export default function Countries() {
               <img src="/img/_backgrounds/people.jpg" className="grid__thumbnail" data-aos="zoom-in" data-aos-delay="100"/>
               <h4 className="grid__title">Sierra Leone</h4>
               <p className="grid__excerpt">
-                Countries or organisations can roll out
-                their own versions in local languages.
+                Sierra Leone Ministry of Health
               </p>
+              <br/>
+              <a href="">WA line</a>
             </div>
             <div className="grid-item grid-item--width2">
               <img src="/img/_backgrounds/world-bg.png" className="grid__thumbnail" data-aos="zoom-in" data-aos-delay="150"/>

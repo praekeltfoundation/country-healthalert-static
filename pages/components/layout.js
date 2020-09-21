@@ -68,7 +68,7 @@ export const PositionStore = () => {
   }
 }
 export const name = "Home"
-export const title = 'HealthConnect'
+export const title = 'HealthAlert'
 
 export default function Layout({children, transparent, home}) {
   const [hideOnScroll, setHideOnScroll] = useState(true)
@@ -149,7 +149,7 @@ export default function Layout({children, transparent, home}) {
                 <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-delay="600" data-aos-easing="ease-in-out-quad">
                   <Link href="/countries">
                     <a
-                      className={styles.menuListAnchor}>HealthAlert</a>
+                      className={styles.menuListAnchor}>Services</a>
                   </Link>
                 </li>
               </ul>

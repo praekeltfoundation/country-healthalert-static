@@ -1,5 +1,12 @@
 # HealthAlert country roll out
 
+This is a static responsive website written in next.js
+https://nextjs.org/
+
+https://nextjs.org/docs
+
+
+## Countries listed
 
 * Sierra Leone
 
@@ -18,8 +25,8 @@
 
 
 ## Running the site locally
-Make sure you have installed node, npm globally
 
+Make sure you have installed node, npm globally
 
 $ cd to project dir
 

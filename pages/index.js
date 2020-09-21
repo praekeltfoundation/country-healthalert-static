@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <Layout transparent home>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__home}`}>
-        <h1 className={utilStyles.title}>Health </h1>
-        <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>Connect</h2>
+        <h1 className={utilStyles.title}>Health</h1>
+        <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>Alert</h2>
         <h3 className={utilStyles.subtitle}>for COVID-19</h3>
         <p className={utilStyles.description}>
           Improving health and strengthening
@@ -19,14 +19,13 @@ export default function Home() {
 
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__homeSection}`}>
         <div className={utilStyles.caption} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
-          <h3 className={utilStyles.subtitle}>Our responses to</h3>
-          <h1 className={utilStyles.title}>COVID-19</h1>
+          <h3 className={utilStyles.subtitle}>WhatsApp Chatbots</h3>
+          <h1 className={utilStyles.title}>for COVID-19</h1>
           <p className={utilStyles.description}>
-            With countries experiencing a massive need for direct communication about COVID-19, {' '}
-            <a href="https://www.praekelt.org/">Praekelt.org</a> (using <a href="https://www.turn.io/">Turn.io</a>)
-            has developed a pro bono solution to empower citizens with the right
-            information and support the national
-            response of the health systems that serve them.
+            Disseminates accurate,
+            timeous information to the public via WhatsApp
+            at population scale.
+            Currently available in multiple languages.
           </p>
         </div>
 
@@ -38,7 +37,7 @@ export default function Home() {
             />
           </div>
           <div className="card-ui__item card-ui__item--text">
-            <h4 className={utilStyles.titleMicro}>Introducing HealthAlert</h4>
+            <h4 className={utilStyles.titleMicro}>What is HealthAlert?</h4>
             <p className={utilStyles.excerpt}>HealthConnect for COVID-19 is a set of interconnected services
             designed to target various aspects of health crises.
             Each service has the powerful potential to
@@ -48,7 +47,7 @@ export default function Home() {
             rapidly as individual services,
             but are most effective when implemented together.</p>
             <Link href="/about">
-              <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Read more</a>
+              <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>See all Services</a>
             </Link>
           </div>
         </div>

@@ -13,11 +13,11 @@ export default function About() {
           <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>Connect</h2>
           <h3 className={utilStyles.subtitle}>Our responses to COVID-19</h3>
           <p className={utilStyles.description}>
-            With countries experiencing a massive need for direct communication
-            about COVID-19, Praekelt.org (using Turn.io)
-            has developed a pro bono solution to empower
-            citizens with the right information and support
-            the national response of the health systems that serve them.
+            With countries experiencing a massive need for direct communication about COVID-19, {' '}
+            <a href="https://www.praekelt.org/">Praekelt.org</a> (using <a href="https://www.turn.io/">Turn.io</a>)
+            has developed a pro bono solution to empower citizens with the right
+            information and support the national
+            response of the health systems that serve them.
           </p>
         </div>
         <div className="card-ui">
