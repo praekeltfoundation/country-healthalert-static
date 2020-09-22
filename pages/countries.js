@@ -1,15 +1,12 @@
 import { useContext } from 'react';
-import useSWR from 'swr'
-
+import DataContext from './components/dataContext';
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { title } from './components/layout'
 import utilStyles from '../public/sass/utils.module.scss'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
-
 function Countries() {
-  const { data, error } = useSWR('/api/countries', fetcher)
+  const { data } = useContext(DataContext);
 
   return (
     <Layout transparent>
@@ -25,22 +22,21 @@ function Countries() {
 
         <div className={utilStyles.bannerContent}>
           <div className="grid">
-          {data.map((p,i) => (
-            <div className="grid-item">{/* grid-item--width2 */}
-              <img
-                src={p.src}
-                className="grid__thumbnail"
-                data-aos="zoom-in" data-aos-delay="100"/>
-              <h4 className="grid__title">{p.title}</h4>
-              <p className="grid__excerpt">
-                {p.subtitle}
-              </p>
-              <Link href="/country/[rollout]" as={`/country/${p.id}`}>
-                <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Go to <span>{p.title}</span></a>
-              </Link>
-
-            </div>
-          ))}
+            {data.map((p,i) => (
+              <div key={i} className="grid-item">{/* grid-item--width2 */}
+                <img
+                  src={p.src}
+                  className="grid__thumbnail"
+                  data-aos="zoom-in" data-aos-delay="100"/>
+                <h4 className="grid__title">{p.title}</h4>
+                <p className="grid__excerpt">
+                  {p.subtitle}
+                </p>
+                <Link href="/country/[rollout]" as={`/country/${p.id}`}>
+                  <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Go to <span>{p.title}</span></a>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

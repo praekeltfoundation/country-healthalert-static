@@ -1,31 +1,34 @@
+import { useContext } from 'react';
+import DataContext from '../components/dataContext';
 import { useRouter } from 'next/router'
-import useSWR from 'swr'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { title } from '../components/layout'
 import utilStyles from '../../public/sass/utils.module.scss'
 
-const fetcher = async (url) => {
-  const res = await fetch(url)
-  const data = await res.json()
 
-  if (res.status !== 200) {
-    throw new Error(data.message)
-  }
-  return data
-}
+function CountryRollOut({ country }) {
+  const { data } = useContext(DataContext);
+  const router = useRouter().query.rollout;
 
-function CountryRollOut() {
-  const { query } = useRouter()
-  const { data, error } = useSWR(
-    () => query.id && `/api/countries/${query.id}`,
-    fetcher
-  )
 
-  if (error) return <div>{error.message}</div>
-  if (!data) return <div>Loading...</div>
+  console.log('Child Contries', )
+
   return (
-    <h1>{data.title}</h1>
+    <Layout transparent>
+      <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__countries}`}>
+
+        <div className={utilStyles.banner}>
+          <h3 className={utilStyles.subtitle}>HealthAlert <br/>Implementation</h3>
+          <p className={utilStyles.description}>data[router]["subtitle"]</p>
+        </div>
+
+        <div className={utilStyles.bannerContent}>
+
+        </div>
+      </section>
+    </Layout>
   )
 
 

@@ -1,3 +1,8 @@
+/*
+  API ENDPOINT
+  @http://.../api/country
+*/
+
 import { data } from '../../data/_data';
 
 export default (req, res) => {
