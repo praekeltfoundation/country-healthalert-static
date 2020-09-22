@@ -8,7 +8,7 @@ import utilStyles from '../public/sass/utils.module.scss'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-function Services() {
+function Countries() {
   const { data, error } = useSWR('/api/countries', fetcher)
 
   return (
@@ -25,18 +25,22 @@ function Services() {
 
         <div className={utilStyles.bannerContent}>
           <div className="grid">
-            {data.map((p,i) => (
-              <div className="grid-item">{/* grid-item--width2 */}
-                <img
-                  src={p.src}
-                  className="grid__thumbnail"
-                  data-aos="zoom-in" data-aos-delay="100"/>
-                <h4 className="grid__title">{p.title}</h4>
-                <p className="grid__excerpt">
-                  {p.subtitle}
-                </p>
-              </div>
-            ))}
+          {data.map((p,i) => (
+            <div className="grid-item">{/* grid-item--width2 */}
+              <img
+                src={p.src}
+                className="grid__thumbnail"
+                data-aos="zoom-in" data-aos-delay="100"/>
+              <h4 className="grid__title">{p.title}</h4>
+              <p className="grid__excerpt">
+                {p.subtitle}
+              </p>
+              <Link href="/country/[rollout]" as={`/country/${p.id}`}>
+                <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Go to <span>{p.title}</span></a>
+              </Link>
+
+            </div>
+          ))}
           </div>
         </div>
       </section>
@@ -44,4 +48,4 @@ function Services() {
   )
 }
 
-export default Services
+export default Countries

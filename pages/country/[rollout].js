@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import useSWR from 'swr'
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, { title } from './components/layout'
-import utilStyles from '../public/sass/utils.module.scss'
+import Layout, { title } from '../components/layout'
+import utilStyles from '../../public/sass/utils.module.scss'
 
 const fetcher = async (url) => {
   const res = await fetch(url)
@@ -21,8 +21,6 @@ function CountryRollOut() {
     () => query.id && `/api/countries/${query.id}`,
     fetcher
   )
-  const { data, error } = useSWR('/api/countries', fetcher)
-
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>

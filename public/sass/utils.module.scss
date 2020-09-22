@@ -142,6 +142,9 @@
     margin: 3em 0;
     padding: 1em 2em;
   }
+  span {
+    text-transform: inherit;
+  }
 
   &Primary {
     border-radius: 45px;
