@@ -1,19 +1,21 @@
+import fse from 'fs-extra'
+import path from 'path'
+import matter from 'gray-matter'
+
 import React, { useState, useEffect } from "react"
+import DataContext from './components/DataContext';
+
 import Masonry from 'react-masonry-component';
 import AOS from 'aos'
+
+import { getSortedPostsData } from '../lib/country'
+
 import 'aos/dist/aos.css'
 import '../public/sass/main.scss'
 
-export default function App({ Component, pageProps }) {
-
+function App({ Component, pageProps, data }) {
 
   useEffect(() => {
-
-    new Masonry(".grid", {
-      itemSelector: ".grid-item",
-      layoutMode: "fitRows"
-    })
-
     if (!window.Cypress) {
       AOS.init({
         startEvent: 'DOMContentLoaded',
@@ -24,6 +26,41 @@ export default function App({ Component, pageProps }) {
   });
 
   return (
-    <Component {...pageProps} />
+    <DataContext.Provider value={{ data }}>
+      <Component {...pageProps} data={ data } />
+    </DataContext.Provider>
   )
 }
+
+App.getInitialProps = async (context) => {
+
+  const postsDirectory = path.join(process.cwd(), 'country');
+  const allData = function getSortedPostsData() {
+    // Get file names under /posts
+    const fileNames = fse.readdirSync(postsDirectory)
+
+    const allPostsData = fileNames.map(fileName => {
+      // Remove ".md" from file name to get id
+      const id = fileName.replace(/\.md$/, '')
+
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName)
+      const fileContents = fse.readFileSync(fullPath, 'utf8')
+
+      // Use gray-matter to parse the post metadata section
+      const matterResult = matter(fileContents)
+
+      // Combine the data with the id
+      return {
+        id,
+        ...matterResult.data
+      }
+    })
+
+    return allPostsData;
+  }
+
+  return { data: allData }
+}
+
+export default App

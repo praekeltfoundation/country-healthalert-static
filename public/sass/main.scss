@@ -15,8 +15,8 @@
   --lime-green: #63A391;
   --gray-black: #111111;
   --gray-cyan: #1a1f21;  //#677c84 //#698086
-
-
+  --light-gray: #ebebeb;
+  --very-light-gray: #f7f7f7;
 }
 
 * {
@@ -25,6 +25,7 @@
 
 html,
 body {
+  background: var(--very-light-gray);
   color: #fff;
   padding: 0;
   margin: 0;
@@ -72,14 +73,25 @@ z-index: 9999999999999999;
 //CARD UI
 .card-ui {
   display: flex;
+  flex-direction: column;
   text-align: left;
   font-size: 18px;
-  justify-content: space-between;
+  @media (min-width: 375px) {
+    flex-direction: row;
+  }
+
   &__item {
     align-self: stretch;
-    margin: 5em 0 0;
+    margin: 0.5em 0 0;
+    @media (min-width: 375px) {
+      margin: 5em 0 0;
+    }
     &--text {
-      padding: 0 2em 0;
+
+      @media (min-width: 375px) {
+        width: 55%;
+        padding: 0 2em 0;
+      }
     }
   }
 }
@@ -96,23 +108,37 @@ z-index: 9999999999999999;
   flex-wrap: wrap;
   justify-content: flex-start;
   text-align: left;
+  @media (min-width: 375px) {
+
+  }
 
   &-item {
-    //border: 1px solid #F7F7F7;
     border-radius: 5px;
-    margin: 0 2em 4em;
     padding: 1em;
-    width: 25%;
+    width: auto;
+    @media (min-width: 375px) {
+      margin: 0 1em 4em;
+      width: 20%;
+    }
     &--width2 {
-      width: 50%;
+      width: auto;
+      @media (min-width: 375px) {
+        margin: 0 1em 4em;
+        width: 50%;
+      }
     }
   }
   &__title {
-    font-size: 20px;
+    font-size: 16px;
     margin: 0 0 0.5em;
+    @media (min-width: 375px) {
+      font-size: 20px;
+    }
   }
   &__thumbnail {
     margin: 0 0 1em;
   }
-  &__excerpt {}
+  &__excerpt {
+    display: block;
+  }
 }

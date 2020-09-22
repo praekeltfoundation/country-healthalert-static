@@ -1,14 +1,31 @@
+#navigation {
+  border: 1px solid red;
+}
+
 .header {
   position: relative;
   width: 100%;
-  //transition: 0.2s top cubic-bezier(.3,.73,.3,.74);
-  //transition: top .6s cubic-bezier(0, .55, .45, 1);
-  //background .2s cubic-bezier(0, .55, .45, 1),top .6s cubic-bezier(0, .55, .45, 1)
+}
+
+.nav {
+  &White {
+    background-color: #fff;
+    a {
+      color: #000;
+    }
+  }
+  &Black {
+    background-color: transparent;
+    a {
+      color: #fff;
+    }
+  }
 }
 
 .logo {
   display: block;
   font-family: 'Roboto Slab', serif;
+  margin: 0 0 1.5em;
   position: relative;
   font-weight: 100;
   &:hover,
@@ -21,18 +38,42 @@
     font-weight: 500;
   }
 }
+
+.nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  @media (min-width: 375px) {
+    height: 100px;
+  }
+}
+
 .menu {
   display: block;
   position: relative;
+  margin: 0 0 1.5em;
   &List {
     margin: 0;
     padding: 0;
     &Item {
       list-style: none;
       display: inline-block;
-      margin: 0 1.5em;
+      margin: 0 0.5em;
+      @media (min-width: 375px) {
+        margin: 0 1.5em;
+      }
+
       &__socialLinks {
         margin: 0 0.5em;
+        @media (min-width: 375px) {
+          margin: 0 0.5em 0.5em;
+        }
       }
     }
     &Anchor {
@@ -53,6 +94,7 @@
 
 .cta {
   display: block;
+  margin: 0 0 1.5em;
   &:hover,
   &:focus {
     opacity: 0.8;
@@ -86,12 +128,39 @@
   position: relative;
 }
 
-
-
+.scrollCta {
+  cursor: pointer;
+  display: block;
+  background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &:before {
+    animation-name: scroll-wheel;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    background-color: var(--very-light-gray);
+    content: "";
+    height: 5px;
+    width: 5px;
+    top: -15px;
+    left: 50%;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    margin-left: -2px;
+  }
+}
 
 .backToHome {
-  background: #fff;
-  padding: 3em 10%;
+  background: var(--very-light-gray);
+  padding: 4em 10%;
   &Anchor {
     display: inline-block;
     font-size: 14px;
@@ -115,40 +184,18 @@
   }
 }
 
-.scrollCta {
-  cursor: pointer;
-  display: block;
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
 
-  background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
-  width: 30px;
-  height: 30px;
-
-  &:before {
-    content: "";
-    animation-name: scroll-wheel;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    -webkit-animation-delay: 3s;
-    animation-delay: 3s;
-
-    height: 5px;
-    width: 5px;
-
-    top: -15px;
-    left: 50%;
-    position: absolute;
-    background: #ffffff;
-    display: block;
-    border-radius: 50%;
-    margin-left: -2px;
-  }
+.footer {
+  background: var(--very-light-gray);
+  color: #111;
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.copyright {
+  font-size: 12px;
+}
 
 @keyframes scroll-wheel {
   from {
@@ -159,16 +206,4 @@
     transform: translate3d(0, 10px, 0);
     opacity: 0;
   }
-}
-
-.footer {
-  background: #fff;
-  color: #111;
-  padding: 1em 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.copyright {
-  font-size: 12px;
 }
