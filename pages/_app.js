@@ -85,7 +85,7 @@ App.getInitialProps = async (context) => {
     })
 
     return allPostsData;
-  }console.log(allData)
+  }
   return { data: allData }
 }
 
