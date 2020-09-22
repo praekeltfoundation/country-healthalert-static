@@ -1,4 +1,4 @@
-export const results = [
+export const data = [
   {
     "title":"Sierra Leone",
     "subtitle":"At vero eos et accusamus et iusto odio dignissimos",

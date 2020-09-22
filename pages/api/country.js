@@ -1,4 +1,4 @@
-import data from '../../data/_data';
+import { data } from '../../data/_data';
 
 export default (req, res) => {
   res.statusCode = 200

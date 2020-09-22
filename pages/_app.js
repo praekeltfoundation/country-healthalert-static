@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react"
-import useSWR from 'swr'
-import Masonry from 'react-masonry-component';
+import Masonry from 'react-masonry-component'
 import AOS from 'aos'
-
 import 'aos/dist/aos.css'
 import '../public/sass/main.scss'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
-
-function App({ Component, pageProps, data }) {
-  console.log('The data:',data)
-
-  const { data, error } = useSWR('/api/people', fetcher)
+function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (!window.Cypress) {
@@ -24,14 +17,9 @@ function App({ Component, pageProps, data }) {
   });
 
   return (
-    <Component {...pageProps}/>
+    <Component {...pageProps} />
   )
 }
 
-App.getInitialProps = async (context) => {
-  const res =  await fetch('http://localhost:3000/api/country')
-  const json = await res.json()
-  return { data: json }
-}
 
 export default App
