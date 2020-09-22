@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import DataContext from './components/DataContext';
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { title } from './components/layout'
