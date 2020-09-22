@@ -6,8 +6,6 @@ import Layout, { title } from './components/layout'
 import utilStyles from '../public/sass/utils.module.scss'
 
 function Countries() {
-  // const { data } = useContext(DataContext);
-  // console.log('Get data here:', data)
 
   return (
     <Layout transparent>

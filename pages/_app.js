@@ -30,38 +30,8 @@ function App({ Component, pageProps, data }) {
   )
 }
 
-// export async function getStaticProps() {
-//   const postsDirectory = path.join(process.cwd(), 'country');
-//   const allData = function getSortedPostsData() {
-//     // Get file names under /posts
-//     const fileNames = fse.readdirSync(postsDirectory)
-//
-//     const allPostsData = fileNames.map(fileName => {
-//       // Remove ".md" from file name to get id
-//       const id = fileName.replace(/\.md$/, '')
-//
-//       // Read markdown file as string
-//       const fullPath = path.join(postsDirectory, fileName)
-//       const fileContents = fse.readFileSync(fullPath, 'utf8')
-//
-//       // Use gray-matter to parse the post metadata section
-//       const matterResult = matter(fileContents)
-//
-//       // Combine the data with the id
-//       return {
-//         id,
-//         ...matterResult.data
-//       }
-//     })
-//
-//     return allPostsData;
-//   }
-//   return { data: allData }
-// }
-
-App.getInitialProps = async (context) => {
+export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), 'country');
-
   const allData = function getSortedPostsData() {
     // Get file names under /posts
     const fileNames = fse.readdirSync(postsDirectory)
@@ -88,5 +58,35 @@ App.getInitialProps = async (context) => {
   }
   return { data: allData }
 }
+
+// App.getInitialProps = async (context) => {
+//   const postsDirectory = path.join(process.cwd(), 'country');
+//
+//   const allData = function getSortedPostsData() {
+//     // Get file names under /posts
+//     const fileNames = fse.readdirSync(postsDirectory)
+//
+//     const allPostsData = fileNames.map(fileName => {
+//       // Remove ".md" from file name to get id
+//       const id = fileName.replace(/\.md$/, '')
+//
+//       // Read markdown file as string
+//       const fullPath = path.join(postsDirectory, fileName)
+//       const fileContents = fse.readFileSync(fullPath, 'utf8')
+//
+//       // Use gray-matter to parse the post metadata section
+//       const matterResult = matter(fileContents)
+//
+//       // Combine the data with the id
+//       return {
+//         id,
+//         ...matterResult.data
+//       }
+//     })
+//
+//     return allPostsData;
+//   }
+//   return { data: allData }
+// }
 
 export default App
