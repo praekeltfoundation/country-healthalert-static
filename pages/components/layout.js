@@ -147,7 +147,7 @@ export default function Layout({children, transparent, home}) {
                   </Link>
                 </li>
                 <li className={styles.menuListItem} data-aos="fade-right" data-aos-once="true" data-aos-delay="600" data-aos-easing="ease-in-out-quad">
-                  <Link href="/countries">
+                  <Link href="/services">
                     <a
                       className={styles.menuListAnchor}>Services</a>
                   </Link>
