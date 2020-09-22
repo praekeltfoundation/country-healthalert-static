@@ -9,13 +9,11 @@ import utilStyles from '../public/sass/utils.module.scss'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 function Services() {
-  const { data, error } = useSWR('/api/country', fetcher)
+  const { data, error } = useSWR('/api/countries', fetcher)
 
   return (
     <Layout transparent>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__countries}`}>
-
-
 
         <div className={utilStyles.banner}>
           <h3 className={utilStyles.subtitle}>HealthAlert <br/>Implementation</h3>
