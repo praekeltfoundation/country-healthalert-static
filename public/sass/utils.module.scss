@@ -108,6 +108,18 @@
   }
 }
 
+.thumbnail {
+  display: inline-block;
+  &Div  {
+    margin: 0 auto;
+  }
+}
+
+.body {
+  display: inline-block;
+  padding: 2em 15%;
+}
+
 
 
 .banner {
@@ -141,6 +153,9 @@
   @media (min-width: 375px) {
     margin: 3em 0;
     padding: 1em 2em;
+  }
+  span {
+    text-transform: inherit;
   }
 
   &Primary {
