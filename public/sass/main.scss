@@ -142,3 +142,26 @@ z-index: 9999999999999999;
     display: block;
   }
 }
+
+.heading_micro {
+  font-size: 1.5rem;
+  letter-spacing: -.05em;
+  margin: 0 0 10px;
+}
+.two-column {
+  display: flex;
+  margin: 5em 0;
+  padding: 4em 1em;
+  position: relative;
+
+  &__item {
+    padding: 1em 2em 1em;
+    text-align: left;
+    &:nth-child(1) {
+      margin: -6em 0 0 0;
+    }
+    &:nth-child(2) {
+      margin: -3em 0 0 0;
+    }
+  }
+}

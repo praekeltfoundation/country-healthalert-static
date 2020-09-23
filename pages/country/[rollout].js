@@ -12,31 +12,54 @@ function CountryRollOut({ country }) {
   const { data } = useContext(DataContext);
   const router = useRouter().query.rollout;
 
+  data.filter((obj) => {
+    if (obj.id === router) {
+      console.log('==>',obj.id);
+      country = obj;
+      return country
+    }
+  });
 
-  console.log('Child Contries', data[router].subtitle )
+  console.log('Child Contries', country);
 
   return (
     <Layout dynamic>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__about}`}>
         <div className={utilStyles.caption} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
           <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>
-            {data[router].title}
+            {country.title}
           </h2>
           <p className={utilStyles.description}>
-            {data[router].subtitle}
+            {country.subtitle}
           </p>
           <div className={utilStyles.thumbnailDiv}>
-            <img src={data[router].src}
+            <img src={country.src}
               className={utilStyles.thumbnail}
             />
           </div>
         </div>
 
         <div className={utilStyles.body}>
-          <p>{data[router].excerpt}</p>
+          <p>{country.excerpt}</p>
+
+          <div className="two-column">
+            {country.services.map((p, i) => (
+              <div className="two-column__item">
+                <h4 className="heading_micro">
+                  {p.title}
+                </h4>
+                <p>{p.subtitle}</p>
+                <div className="column-cta">
+                  <a href={p.href} className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Visit {p.title}</a>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
     </Layout>
+
   )
 
 }
