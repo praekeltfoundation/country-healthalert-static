@@ -116,7 +116,6 @@
   left: 0;
   right: 0;
 
-
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
@@ -148,7 +147,7 @@
     -webkit-animation-delay: 3s;
     animation-delay: 3s;
     background-color: var(--very-light-gray);
-    content: "";
+    content: " ";
     height: 5px;
     width: 5px;
     top: -15px;
@@ -162,7 +161,7 @@
 
 .backToHome {
   background: var(--very-light-gray);
-  padding: 4em 10%;
+  padding: 4em 5%;
   &Anchor {
     display: inline-block;
     font-size: 14px;
@@ -173,7 +172,7 @@
       content: "";
       display: block;
       height: 50px;
-      margin: 0 -5px 0px;
+      margin: 0 -5px 0;
       opacity: 1;
       vertical-align: middle;
       width: 50px;
