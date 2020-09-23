@@ -31,7 +31,7 @@ export default function About() {
             <p>The services can be deployed,
             rapidly as individual services,
             but are most effective when implemented together.</p>
-            <Link href="/about">
+            <Link href="/countries">
               <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Read more</a>
             </Link>
           </div>
