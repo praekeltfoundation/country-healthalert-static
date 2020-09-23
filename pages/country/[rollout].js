@@ -13,24 +13,31 @@ function CountryRollOut({ country }) {
   const router = useRouter().query.rollout;
 
 
-  console.log('Child Contries', )
+  console.log('Child Contries', data[router].subtitle )
 
   return (
-    <Layout transparent>
-      <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__countries}`}>
-
-        <div className={utilStyles.banner}>
-          <h3 className={utilStyles.subtitle}>HealthAlert <br/>Implementation</h3>
-          <p className={utilStyles.description}>data[router]["subtitle"]</p>
+    <Layout dynamic>
+      <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__about}`}>
+        <div className={utilStyles.caption} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
+          <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>
+            {data[router].title}
+          </h2>
+          <p className={utilStyles.description}>
+            {data[router].subtitle}
+          </p>
+          <div className={utilStyles.thumbnailDiv}>
+            <img src={data[router].src}
+              className={utilStyles.thumbnail}
+            />
+          </div>
         </div>
 
-        <div className={utilStyles.bannerContent}>
-
+        <div className={utilStyles.body}>
+          <p>{data[router].excerpt}</p>
         </div>
       </section>
     </Layout>
   )
-
 
 }
 export default CountryRollOut

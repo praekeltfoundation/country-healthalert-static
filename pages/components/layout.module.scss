@@ -47,10 +47,12 @@
   height: auto;
   justify-content: space-between;
   margin: 0 auto;
+
   padding: 1em;
   width: 100%;
   @media (min-width: 375px) {
     height: 100px;
+    padding: 1em 15%;
   }
 }
 

@@ -14,7 +14,6 @@ const NavbarBase = styled.nav`
   z-index: 999;
   @media (min-width: 375px) {
     flex-direction: row;
-    padding: 1em 2em;
   }
 `;
 export const Navbar = styled(NavbarBase)`
@@ -70,7 +69,7 @@ export const PositionStore = () => {
 export const name = "Home"
 export const title = 'HealthAlert'
 
-export default function Layout({children, transparent, home}) {
+export default function Layout({children, transparent, home, dynamic}) {
   const [hideOnScroll, setHideOnScroll] = useState(true)
   const positionsStore = PositionStore()
   const rendersCount = useRef(0)
@@ -188,16 +187,19 @@ export default function Layout({children, transparent, home}) {
         <main role="main" className={styles.container} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
           <div className={styles.main}>
             {children}
+
             {!transparent && (
               <div className={styles.backToHome}>
-                <Link href="/">
+                <Link href={!dynamic ? "/" : "/countries"}>
                   <a className={styles.backToHomeAnchor}>Back</a>
                 </Link>
               </div>
             )}
           </div>
         </main>
-        {home && ( <div className={styles.scrollCta}></div> )}
+        {home && (
+          <div className={styles.scrollCta}></div>
+        )}
         <footer className={styles.footer}>
           <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
         </footer>

@@ -108,6 +108,18 @@
   }
 }
 
+.thumbnail {
+  display: inline-block;
+  &Div  {
+    margin: 0 auto;
+  }
+}
+
+.body {
+  display: inline-block;
+  padding: 2em 15%;
+}
+
 
 
 .banner {
