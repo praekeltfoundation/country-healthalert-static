@@ -33,3 +33,8 @@ $ cd to project dir
 $ npm install
 
 $ npm run dev
+
+
+## How the site is structured
+
+(Get started documentation here)[https://nextjs.org/docs/getting-started]
