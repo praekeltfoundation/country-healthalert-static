@@ -38,7 +38,6 @@ function App({ Component, pageProps, url }) {
 
   if(!data) return null;
 
-  console.log('Country list:',data);
   return (
     <DataContext.Provider value={{ data }}>
       <Component {...pageProps} data={ data } />
