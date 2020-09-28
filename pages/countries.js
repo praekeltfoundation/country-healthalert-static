@@ -22,21 +22,21 @@ function Countries() {
 
         <div className={utilStyles.bannerContent}>
           <div className="grid">
-          {data.map((p,i) => (
-            <div key={i} className={i % 2 === 0? "grid-item" : "grid-item grid-item--width2"}>
-              <img
-                src={p.src}
-                className="grid__thumbnail"
-                data-aos="zoom-in" data-aos-delay="100"/>
-              <h4 className="grid__title">{p.title}</h4>
-              <p className="grid__excerpt">
-                {p.subtitle}
-              </p>
-              <Link href="/country/[rollout]" as={`/country/${p.id}`}>
-                <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Go to <span>{p.title}</span></a>
-              </Link>
-            </div>
-          ))}
+            {data.map((p,i) => (
+              <div key={i} className={i % 2 === 0? "grid-item" : "grid-item grid-item--width2"}>
+                <img
+                  src={p.src}
+                  className="grid__thumbnail"
+                  data-aos="zoom-in" data-aos-delay="100"/>
+                <h4 className="grid__title">{p.title}</h4>
+                <p className="grid__excerpt">
+                  {p.subtitle}
+                </p>
+                <Link href="/country/[rollout]" as={`/country/${p.id}`}>
+                  <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Go to <span>{p.title}</span></a>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

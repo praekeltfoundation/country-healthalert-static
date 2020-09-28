@@ -1,10 +1,13 @@
-import React, { useState, useRef, createRef, useMemo, Fragment } from "react"
+import React, { useEffect, useState, useRef, createRef, useMemo, Fragment } from "react"
+import { useRouter } from 'next/router'
+
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Head from 'next/head'
 import Link  from 'next/link'
 import styled from 'styled-components'
 import styles from './layout.module.scss'
 import utilStyles from '../../public/sass/utils.module.scss'
+
 
 const NavbarBase = styled.nav`
   position: fixed;
@@ -68,8 +71,10 @@ export const PositionStore = () => {
 }
 export const name = "Home"
 export const title = 'HealthAlert'
+export const description = "HealthAlert | Improving health and strengthening Health Systems in the time of COVID-19"
 
-export default function Layout({children, transparent, home, dynamic}) {
+export default function Layout({children, transparent, home, dynamic, href}) {
+  const router = useRouter()
   const [hideOnScroll, setHideOnScroll] = useState(true)
   const positionsStore = PositionStore()
   const rendersCount = useRef(0)
@@ -77,7 +82,7 @@ export default function Layout({children, transparent, home, dynamic}) {
   const elemRef = useRef(null)
 
   //Navbar fade in/out animation
-  useScrollPosition(
+  useScrollPosition (
     ({ prevPos, currPos }) => {
       const isShow = currPos.y > prevPos.y
       if (isShow !== hideOnScroll) {
@@ -91,7 +96,7 @@ export default function Layout({children, transparent, home, dynamic}) {
   )
 
   // Viewport scroll position
-  useScrollPosition(
+  useScrollPosition (
     ({ currPos }) => {
       positionsStore.setViewportPosition(currPos)
       const { style } = viewportRef.current
@@ -104,7 +109,7 @@ export default function Layout({children, transparent, home, dynamic}) {
   )
 
   // Element scroll position
-  useScrollPosition(
+  useScrollPosition (
     ({ currPos }) => positionsStore.setElementPosition(currPos),
     [],
     elemRef,
@@ -112,21 +117,26 @@ export default function Layout({children, transparent, home, dynamic}) {
     300
   )
 
+
   return useMemo(
     () => (
       <Fragment>
         <Head>
           <title>{name} - {title}</title>
           <link rel="icon" href="favicon.ico" />
-          <meta
-            name="description"
-            content="Improving health and strengthening Health Systems in the time of COVID-19"
-          />
+          <meta name="description" content={description}/>
           <meta name="og:title" content={title} />
           <meta name="twitter:card" content="summary_large_image" />
+
+          <meta property="og:url" content={router.route} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content="/img/healthconnect-info.png" />
         </Head>
 
-        {/* TO CLEAN UP CODE */}
+        <div id="fb-root"></div>
+
         <header className={styles.header}>
           <Navbar show={hideOnScroll} className={`${styles.nav} ${transparent && positionsStore.getViewportY() <= 190 ? styles.navBlack : styles.navWhite }`}>
             <div className={styles.logo} data-aos="fade-right" data-aos-once="true" data-aos-delay="500" data-aos-easing="ease-in-out-quad">
@@ -156,18 +166,26 @@ export default function Layout({children, transparent, home, dynamic}) {
             <div className={styles.cta} data-aos="fade-right" data-aos-once="true" data-aos-delay="650" data-aos-easing="ease-in-out-quad">
                 <ul className={styles.menuList}>
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
-                    <a
-                      href="https://www.facebook.com/praekeltorg/posts/3257879447602230" className={styles.menuListAnchor}>
-                      <img
-                        src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
-                        alt="Praekelt.org Healthconnect on Facebook"
-                        className={styles.menuListIcon}
-                      />
-                    </a>
+                    <div
+                      data-href="http://healthalert.static.qa.p16n.org/"
+                      data-layout="button">
+                        <a
+                          target="_blank"
+                          href={`https://www.facebook.com/sharer/sharer.php?u=/%2F&amp;src=sdkpreparse`}
+                          className={styles.menuListAnchor}>
+                          <img
+                            src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
+                            alt="Praekelt.org Healthconnect on Facebook"
+                            className={styles.menuListIcon}
+                          />
+                        </a>
+                    </div>
                   </li>
                   <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
                     <a
-                      href="https://twitter.com/gustavp/status/1303260655525527552" className={styles.menuListAnchor}>
+                      href={`https://twitter.com/share?ref_src=twsrc%5Etfw&text=${description}`}
+                      className={styles.menuListAnchor}
+                      data-show-count="false">
                       <img
                         src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/twitter-white.png" : " /img/_icons/twitter.png"}
                         alt="Praekelt.org Healthconnect on Twitter"
@@ -208,6 +226,4 @@ export default function Layout({children, transparent, home, dynamic}) {
     [hideOnScroll]
     [positionsStore]
   )
-}
-
-;
+};

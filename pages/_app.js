@@ -10,10 +10,8 @@ import '../public/sass/main.scss'
 
 const fetcher = url => fetch(url).then(r => r.json())
 
-function App({ Component, pageProps,  }) {
+function App({ Component, pageProps }) {
   const { data, error } = useSWR('/api/countries', fetcher)
-
-
   useEffect(() => {
     if (!window.Cypress) {
       AOS.init({
@@ -22,11 +20,25 @@ function App({ Component, pageProps,  }) {
       });
       AOS.refresh();
     }
+    let jsScripts = [
+      "https://platform.twitter.com/widgets.js",
+      "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0"
+    ];
+
+    for (let i = 0; i < jsScripts.length; i++) {
+      let script = document.createElement('script');
+        script.src = jsScripts[i];
+        script.async = true;
+        script.defer = "defer";
+        script.crossorigin = "anonymous";
+        document.querySelector('script').parentNode.appendChild(script);
+    }
+    console.log('Get url:', window.location.origin );
   });
 
   return (
-    <DataContext.Provider value={{ data }}>
-      <Component {...pageProps} data={ data } />
+    <DataContext.Provider >
+      <Component {...pageProps} />
     </DataContext.Provider>
   )
 }
