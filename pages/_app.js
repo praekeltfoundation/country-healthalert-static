@@ -10,7 +10,7 @@ import '../public/sass/main.scss'
 
 const fetcher = url => fetch(url).then(r => r.json())
 
-function App({ Component, pageProps, url }) {
+function App({ Component, pageProps }) {
   const { data, error } = useSWR('/api/countries', fetcher)
   useEffect(() => {
     if (!window.Cypress) {
