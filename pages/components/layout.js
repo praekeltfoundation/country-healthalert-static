@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, createRef, useMemo, Fragment } from "react"
 import { useRouter } from 'next/router'
+
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Head from 'next/head'
 import Link  from 'next/link'
@@ -116,6 +117,7 @@ export default function Layout({children, transparent, home, dynamic, href}) {
     300
   )
 
+
   return useMemo(
     () => (
       <Fragment>
@@ -126,11 +128,11 @@ export default function Layout({children, transparent, home, dynamic, href}) {
           <meta name="og:title" content={title} />
           <meta name="twitter:card" content="summary_large_image" />
 
-          <meta property="og:url"           content={href} />
-          <meta property="og:type"          content="website" />
-          <meta property="og:title"         content={title} />
-          <meta property="og:description"   content={description} />
-          <meta property="og:image"         content="/img/healthconnect-info.png" />
+          <meta property="og:url" content={router.route} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content="/img/healthconnect-info.png" />
         </Head>
 
         <div id="fb-root"></div>
@@ -169,7 +171,7 @@ export default function Layout({children, transparent, home, dynamic, href}) {
                       data-layout="button">
                         <a
                           target="_blank"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=${href}%2F&amp;src=sdkpreparse`}
+                          href={`https://www.facebook.com/sharer/sharer.php?u=/%2F&amp;src=sdkpreparse`}
                           className={styles.menuListAnchor}>
                           <img
                             src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
@@ -224,6 +226,4 @@ export default function Layout({children, transparent, home, dynamic, href}) {
     [hideOnScroll]
     [positionsStore]
   )
-}
-
-;
+};
