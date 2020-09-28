@@ -14,13 +14,10 @@ function CountryRollOut({ country }) {
 
   data.filter((obj) => {
     if (obj.id === router) {
-      console.log('==>',obj.id);
       country = obj;
       return country
     }
   });
-
-  console.log('Child Contries', country);
 
   return (
     <Layout dynamic>
@@ -42,20 +39,21 @@ function CountryRollOut({ country }) {
         <div className={utilStyles.body}>
           <p>{country.excerpt}</p>
 
-          <div className="two-column">
-            {country.services.map((p, i) => (
-              <div className="two-column__item">
-                <h4 className="heading_micro">
-                  {p.title}
-                </h4>
-                <p>{p.subtitle}</p>
-                <div className="column-cta">
-                  <a href={p.href} className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Visit {p.title}</a>
+          {country.services && (
+            <div className="two-column">
+              {country.services.map((p, i) => (
+                <div key={i} className="two-column__item">
+                  <h4 className="heading_micro">
+                    {p.title}
+                  </h4>
+                  <p>{p.subtitle}</p>
+                  <div className="column-cta">
+                    <a href={p.href} className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Visit {p.title}</a>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </Layout>
