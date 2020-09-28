@@ -14,7 +14,6 @@ function CountryRollOut({ country }) {
 
   data.filter((obj) => {
     if (obj.id === router) {
-      console.log('==>',obj.id);
       country = obj;
       return country
     }
