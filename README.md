@@ -12,8 +12,6 @@ You need basic javascript knowledge, a [node.js](https://nodejs.org/en/download/
 
 http://healthalert.static.qa.p16n.org
 
-<br/>
-
 This website is no longer just **static** even though the repo title suggests - the application now supports the dynamic querying of the content.
 
 The data is currently pulled locally within the project at `data/_data.js` and surfaced through an api endpoint e.g.http://healthalert.static.qa.p16n.org/api/countries. The api endpoint directory is `pages/api/countries.js`
