@@ -116,16 +116,12 @@ z-index: 9999999999999999;
     border-radius: 5px;
     padding: 1em;
     width: auto;
-    @media (min-width: 541px) {
+    @media (min-width: 541px) and (max-width: 720px) {
       margin: 0 1em 4em;
-      width: 20%;
     }
-    &--width2 {
-      width: auto;
-      @media (min-width: 541px) {
-        margin: 0 1em 4em;
-        width: 50%;
-      }
+    @media (min-width: 721px) {
+      margin: 0 1em 4em;
+      width: 45%;
     }
   }
   &__title {
