@@ -146,11 +146,17 @@
   &Content {
     margin: 1em 0 0;
     position: relative;
-    @media (max-width: 480px) {
-      margin: 10% 0 0;
-    };
-    @media (min-width: 541px), (max-width: 320px){
+    @media (max-width: 275px){
+      margin: 175px 0 0;
+    }
+    @media (min-width: 276px) and (max-width: 540px){
       margin: 20% 0 0;
+    }
+    @media (min-width: 541px) and (max-width: 649px) {
+      margin: 350px 0 0;
+    }
+    @media (min-width: 650px){
+      margin: 300px 0 0;
     }
   }
 }
