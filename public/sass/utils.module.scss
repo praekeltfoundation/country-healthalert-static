@@ -49,13 +49,6 @@
     color: var(--gray-black);
     height: auto;
     width: 100%;
-    @media (min-width: 541px) {
-      background-image: url('../../public/img/_backgrounds/banner-bg.png');
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-clip: border-box;
-      background-size: 100%;
-    }
   }
 
 }
@@ -139,7 +132,12 @@
   left: 0;
   padding: 10em 1em 0;
   @media (min-width: 541px) {
-    background-color: transparent;
+    background-image: url('../../public/img/_backgrounds/banner-bg.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-clip: border-box;
+    background-size: 100%;
+    background-color: #3F3F56;
     padding: 7em 15% 0;
   }
 
