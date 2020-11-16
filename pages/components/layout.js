@@ -208,9 +208,7 @@ export default function Layout({children, transparent, home, dynamic, href}) {
 
             {!transparent && (
               <div className={styles.backToHome}>
-                <Link href={!dynamic ? "/" : "/countries"}>
-                  <a className={styles.backToHomeAnchor}>Back</a>
-                </Link>
+                <a href="javascript:history.go(-1)" className={styles.backToHomeAnchor}>Back</a>
               </div>
             )}
           </div>

@@ -11,7 +11,7 @@
   margin: 0 auto;
 height: 200px;
 
-  @media (min-width: 375px) {
+  @media (min-width: 541px) {
     height: auto;
   }
 }
@@ -59,7 +59,7 @@ height: 200px;
 
   padding: 1em;
   width: 100%;
-  @media (min-width: 375px) {
+  @media (min-width: 541px) {
     height: 100px;
     padding: 1em 15%;
   }
@@ -76,13 +76,13 @@ height: 200px;
       list-style: none;
       display: inline-block;
       margin: 0 0.5em;
-      @media (min-width: 375px) {
+      @media (min-width: 541px) {
         margin: 0 1.5em;
       }
 
       &__socialLinks {
         margin: 0 0.5em;
-        @media (min-width: 375px) {
+        @media (min-width: 541px) {
           margin: 0 0.5em 0.5em;
         }
       }
