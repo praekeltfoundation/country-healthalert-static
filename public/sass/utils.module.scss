@@ -58,6 +58,15 @@
     color: var(--gray-black);
     height: auto;
     width: 100%;
+    &Section {
+      &:nth-child(2) {
+        color: #fff;
+        background: var(--light-green-blue) url('../../public/img/_backgrounds/About-us-Hero-image-02.png') no-repeat center center / cover;
+        @media (max-width: 541px) {
+          background: var(--au-chico);
+        }
+      }
+    }
   }
   &__countries {
     color: var(--gray-black);
