@@ -3,7 +3,8 @@ export const data = [
     id: "sierra-leone",
     title: "Sierra Leone",
     subtitle: "This is the official COVID-19 WhatsApp service of the Sierra Leone Ministry of Health and Sanitation.",
-    src: "/img/_backgrounds/world-bg.png",
+    src: "/img/_countries/_banners/Sierra-Leone.png",
+    thumbnail: "/img/_countries/_thumbnails/Sierra-Leone.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
@@ -34,7 +35,8 @@ export const data = [
     id: "ethiopia",
     title: "Ethiopia",
     subtitle: "This is the official COVID-19 WhatsApp service of the Ethiopian Federal Ministry of Health.",
-    src: "/img/_backgrounds/people.jpg",
+    src: "/img/_countries/_banners/Ethiopia.png",
+    thumbnail: "/img/_countries/_thumbnails/Ethiopia.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
@@ -69,7 +71,8 @@ export const data = [
     id: "bangladesh",
     title: "Bangladesh",
     subtitle: "This is the official COVID-19 WhatsApp service of the Program of Directorate General of Health Services, Ministry of Health and Family Welfare, for the People’s Republic of Bangladesh.",
-    src: "/img/_backgrounds/world-map.png",
+    src: "/img/_countries/_banners/Bangladesh.png",
+    thumbnail: "/img/_countries/_thumbnails/Bangladesh.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
@@ -110,7 +113,8 @@ export const data = [
     id: "madagascar",
     title: "Madagascar",
     subtitle: "This is the official COVID-19 WhatsApp service of the Ministère des Postes des Télécommunications et du Dévelopement Numérique in Madagascar.",
-    src: "/img/_backgrounds/people.jpg",
+    src: "/img/_countries/_banners/Madagascar.png",
+    thumbnail: "/img/_countries/_thumbnails/Madagascar.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
@@ -147,7 +151,8 @@ export const data = [
     id: "mozambique",
     title: "Mozambique",
     subtitle:  "The Instituto Nacional de Saúde provides correct and relevant information on the COVID-19 pandemic via WhatsApp.",
-    src: "/img/_backgrounds/world-bg.png",
+    src: "/img/_countries/_banners/Mozambique.png",
+    thumbnail: "/img/_countries/_thumbnails/Mozambique.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
@@ -183,7 +188,8 @@ export const data = [
     id: "timor-leste",
     title: "Timor-leste",
     subtitle: "The Ministério da Saúde, Timor-Leste provides COVID-19 information and advice in Tetun and English through HealthAlert on WhatsApp.",
-    src: "/img/_backgrounds/world-map.png",
+    src: "/img/_countries/_banners/Timor-leste.png",
+    thumbnail: "/img/_countries/_thumbnails/Timor-leste.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
@@ -219,7 +225,8 @@ export const data = [
     id: "uganda",
     title: "Uganda",
     subtitle: "This is the official COVID-19 WhatsApp service of the Ugandan Ministry of Health.",
-    src: "/img/_backgrounds/world-bg.png",
+    src: "/img/_countries/_banners/Uganda.png",
+    thumbnail: "/img/_countries/_thumbnails/Uganda.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {

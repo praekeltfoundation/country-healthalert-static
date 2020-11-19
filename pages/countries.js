@@ -25,7 +25,7 @@ function Countries() {
             {data.map((p,i) => (
               <div key={i} className={i % 2 === 0? "grid-item" : "grid-item grid-item--width2"}>
                 <img
-                  src={p.src}
+                  src={p.thumbnail}
                   className="grid__thumbnail"
                   data-aos="zoom-in" data-aos-delay="100"/>
                 <h4 className="grid__title">{p.title}</h4>
