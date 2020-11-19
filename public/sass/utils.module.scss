@@ -22,7 +22,7 @@
   }
 
   &__home {
-    background: var(--gray-cyan) url('../../public/img/_backgrounds/world-map.png') no-repeat center center / cover;
+    background: var(--purplish-blue) url('../../public/img/_backgrounds/Landing-Page-Hero.png') no-repeat center center / cover;
     color: #fff;
     height: auto;
     padding: 12em 1em 0;
@@ -37,6 +37,20 @@
       color: #000;
       @media (min-width: 541px) {
         padding: 5em 2em 7em;
+      }
+      &:nth-child(2) {
+        color: #fff;
+        background: var(--au-chico) url('../../public/img/_backgrounds/One-pager-Hero-image-02.png') no-repeat center center / cover;
+        @media (max-width: 541px) {
+          background: var(--au-chico);
+        }
+      }
+      &:nth-child(4) {
+        color: #fff;
+        background: var(--light-green-blue) url('../../public/img/_backgrounds/One-pager-Hero-image-03.png') no-repeat center center / cover;
+        @media (max-width: 541px) {
+          background: var(--light-green-blue);
+        }
       }
     }
   }
