@@ -138,8 +138,20 @@
 }
 
 .body {
+  text-align: left;
   display: inline-block;
   padding: 2em 15%;
+
+  ul {
+    padding-left: 5%;
+    padding-bottom: 10px;
+  }
+  li {
+    list-style: disc;
+  }
+  p {
+    padding-bottom: 10px;
+  }
 }
 
 
