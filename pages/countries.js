@@ -9,14 +9,15 @@ function Countries() {
   const { data } = useContext(DataContext);
 
   return (
-    <Layout transparent>
+    <Layout>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__countries}`}>
 
         <div className={utilStyles.banner}>
           <h3 className={utilStyles.subtitle}>HealthAlert <br/>Implementation</h3>
           <p className={utilStyles.description}>
-            Countries and organisations that are using one or a
-            combination of these services include the World Health Organisation
+            Numerous countries and organisations across the globe are using
+            HealthAlert WhatsApp services to directly communicate accurate,
+            up-to-date and relevant information.
           </p>
         </div>
 
