@@ -163,38 +163,6 @@ export default function Layout({children, transparent, home, dynamic, href}) {
                 </li>
               </ul>
             </div>
-            <div className={styles.cta} data-aos="fade-right" data-aos-once="true" data-aos-delay="650" data-aos-easing="ease-in-out-quad">
-                <ul className={styles.menuList}>
-                  <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
-                    <div
-                      data-href="http://healthalert.static.qa.p16n.org/"
-                      data-layout="button">
-                        <a
-                          target="_blank"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=/%2F&amp;src=sdkpreparse`}
-                          className={styles.menuListAnchor}>
-                          <img
-                            src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook.png" }
-                            alt="Praekelt.org Healthconnect on Facebook"
-                            className={styles.menuListIcon}
-                          />
-                        </a>
-                    </div>
-                  </li>
-                  <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
-                    <a
-                      href={`https://twitter.com/share?ref_src=twsrc%5Etfw&text=${description}`}
-                      className={styles.menuListAnchor}
-                      data-show-count="false">
-                      <img
-                        src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/twitter-white.png" : " /img/_icons/twitter.png"}
-                        alt="Praekelt.org Healthconnect on Twitter"
-                        className={styles.menuListIcon}
-                      />
-                    </a>
-                  </li>
-              </ul>
-            </div>
           </Navbar>
         </header>
 
@@ -218,6 +186,38 @@ export default function Layout({children, transparent, home, dynamic, href}) {
         )}
         <footer className={styles.footer}>
           <p className={styles.copyright}>&copy;  {new Date().getFullYear()} All Rights Reserved</p>
+          <div className={styles.cta} data-aos="fade-right" data-aos-once="true" data-aos-delay="650" data-aos-easing="ease-in-out-quad">
+              <ul className={styles.menuList}>
+                <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
+                  <div
+                    data-href="http://healthalert.static.qa.p16n.org/"
+                    data-layout="button">
+                      <a
+                        target="_blank"
+                        href={`https://www.facebook.com/sharer/sharer.php?u=/%2F&amp;src=sdkpreparse`}
+                        className={styles.menuListAnchor}>
+                        <img
+                          src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/facebook-white.png" : "/img/_icons/facebook-white.png" }
+                          alt="Praekelt.org Healthconnect on Facebook"
+                          className={styles.menuListIcon}
+                        />
+                      </a>
+                  </div>
+                </li>
+                <li className={`${styles.menuListItem} ${styles.menuListItem__socialLinks}`}>
+                  <a
+                    href={`https://twitter.com/share?ref_src=twsrc%5Etfw&text=${description}`}
+                    className={styles.menuListAnchor}
+                    data-show-count="false">
+                    <img
+                      src={transparent && positionsStore.getViewportY() <= 190 ? "/img/_icons/twitter-white.png" : " /img/_icons/twitter-white.png"}
+                      alt="Praekelt.org Healthconnect on Twitter"
+                      className={styles.menuListIcon}
+                    />
+                  </a>
+                </li>
+            </ul>
+          </div>
         </footer>
       </Fragment>
     ),

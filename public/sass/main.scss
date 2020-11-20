@@ -17,6 +17,9 @@
   --gray-cyan: #1a1f21;  //#677c84 //#698086
   --light-gray: #ebebeb;
   --very-light-gray: #f7f7f7;
+  --au-chico: #875555;
+  --purplish-blue: #616191;
+  --light-green-blue: #83baa7;
 }
 
 * {
@@ -92,6 +95,11 @@ z-index: 9999999999999999;
         width: 55%;
         padding: 0 2em 0;
       }
+    }
+  }
+  img {
+    @media (min-width: 780px){
+      max-width: 428px;
     }
   }
 }

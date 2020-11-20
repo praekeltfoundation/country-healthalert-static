@@ -19,6 +19,29 @@ function CountryRollOut({ country }) {
     }
   });
 
+  var body = <p>{country.excerpt}</p>
+  if (country.body != undefined) {
+    body = country.body.map(function(element){
+      if (element.type == "paragraph") {
+        if (element.link != undefined){
+          var split_content = element.content.split("<link>")
+          return <p>{ split_content[0] } <a href={element.link}>{element.link_text}</a>{ split_content[1] }</p>;
+        }
+        return <p>{ element.content }</p>;
+      }
+      else if (element.type == "list") {
+        return <ul className='service-list'>{ element.items.map(function(item,index){
+          var key = "service-"+index;
+          if (item.link != undefined){
+            var split_content = item.content.split("<link>")
+            return <li key={key}>{ split_content[0] } <a href={item.link}>{item.link_text}</a>{ split_content[1] }</li>;
+          }
+          return <li key={key}>{item.content}</li>;
+        })}</ul>
+      }
+    })
+  }
+
   return (
     <Layout dynamic>
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__about}`}>
@@ -37,7 +60,7 @@ function CountryRollOut({ country }) {
         </div>
 
         <div className={utilStyles.body}>
-          <p>{country.excerpt}</p>
+          { body }
 
           {country.services && (
             <div className="two-column">
