@@ -29,13 +29,9 @@ function Countries() {
                   src={p.thumbnail}
                   className="grid__thumbnail"
                   data-aos="zoom-in" data-aos-delay="100"/>
-                <h4 className="grid__title">{p.title}</h4>
                 <p className="grid__excerpt">
                   {p.subtitle}
                 </p>
-                <Link href="/countries/[rollout]" as={`/countries/${p.id}`}>
-                  <a className={`${utilStyles.button} ${utilStyles.buttonPrimary}`}>Go to <span>{p.title}</span></a>
-                </Link>
               </div>
             ))}
           </div>
