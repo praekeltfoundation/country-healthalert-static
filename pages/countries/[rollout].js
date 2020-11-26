@@ -55,7 +55,7 @@ function CountryRollOut({ country }) {
           <h2 className={`${utilStyles.countrytitle} ${utilStyles.countrytitleStrong}`}>
             {country.title}
           </h2>
-          <p className={utilStyles.description}>
+          <p className={utilStyles.descriptioncountry}>
             {country.subtitle}
           </p>
 
