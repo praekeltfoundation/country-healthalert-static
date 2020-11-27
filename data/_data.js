@@ -260,7 +260,7 @@ export const data = [
   },
   {
     id: "drc",
-    title: "DRC",
+    title: "Democratic Republic of Congo",
     subtitle: "This is the official COVID-19 WhatsApp service of the Democratic Republic of Congo Ministry of Health.",
     src: "/img/_countries/_banners/DRC.png",
     thumbnail: "/img/_countries/_thumbnails/DRC.png",
