@@ -60,7 +60,7 @@ export const data = [
       {
         type: "list",
         items: [
-          {content: " <link> ", link: "http://wa.me/251962228565?text=hi", link_text: "Amharic"}],    
+          {content: " <link> ", link: "http://wa.me/251962228565?text=hi", link_text: "Amharic"}],
       },
       {
         type: "paragraph",
@@ -227,6 +227,43 @@ export const data = [
     subtitle: "This is the official COVID-19 WhatsApp service of the Ugandan Ministry of Health.",
     src: "/img/_countries/_banners/Uganda.png",
     thumbnail: "/img/_countries/_thumbnails/Uganda.png",
+    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
+    body: [
+      {
+        type: "paragraph",
+        content: "The service provides accurate, up-to-date information in English, including:"
+      },
+      {
+        type: "list",
+        items: [
+          {content: "Latest statistics"},
+          {content: "Advice on how to protect yourself"},
+          {content: "Frequently asked questions"},
+          {content: "Debunking myths"},
+          {content: "Travel advice"},
+          {content: "News"}
+      ]},
+      {
+        type: "paragraph",
+        content: "You can also find national guidelines relating to trucking, mass gatherings, public transport, uniformed personnel, funerals, markets, self-isolation, work meetings, discharge after COVID-19 treatment, prisons and Village Health Teams."
+      },
+      {
+        type: "paragraph",
+        content: "To get started, just click on this link from your phone: <link>",
+        link: "https://wa.me/256323200660?text=hi",
+        link_text: "English"
+      },
+      {
+        type: "paragraph",
+        content: "Or send “hi” to +25 632 320 0660"
+      }]
+  },
+  {
+    id: "drc",
+    title: "DRC",
+    subtitle: "This is the official COVID-19 WhatsApp service of the Democratic Republic of Congo Ministry of Health.",
+    src: "/img/_countries/_banners/DRC.png",
+    thumbnail: "/img/_countries/_thumbnails/DRC.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
