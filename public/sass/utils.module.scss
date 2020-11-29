@@ -15,7 +15,6 @@
     text-align: center;
     position: relative;
 
-
     &Intro {
       padding: 7vw 1vw;
 
@@ -111,12 +110,24 @@
   font-size: 4vw;
   font-weight: 400;
   text-align: left;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 5vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 6vw;
+  }
 
 }
 .subtitlecenter {
   font-size: 4vw;
   font-weight: 400;
   text-align: center;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 5vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 6vw;
+  }
 
 }
 .leftsubtitle {
@@ -128,18 +139,36 @@
   text-align: left;
   font-size: 2vw;
   padding: 2vw 0;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 3vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 4vw;
+  }
 
 }
 .descriptioncentre {
   text-align: center;
   font-size: 2vw;
   padding: 2vw 4vw;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 3vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 4vw;
+  }
 
 }
 .descriptioncountry {
   text-align: left;
   font-size: 2vw;
   padding: 2vw 4vw 0 8vw;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 2vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 3vw;
+  }
 
 }
 
@@ -151,6 +180,12 @@
 }
 .excerpt {
   font-size: 2vw;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 3vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 4vw;
+  }
 }
 
 .thumbnail {
@@ -170,9 +205,25 @@
   }
   li {
     list-style: disc;
+    @media (min-width: 401px) and (max-width: 720px) {
+      font-size: 2vw;
+    }
+    @media (max-width: 400px) {
+      font-size: 4vw;
+    }
   }
   p {
     padding-bottom: 1vw;
+    @media (min-width: 401px) and (max-width: 720px) {
+      font-size: 2vw;
+    }
+    @media (max-width: 400px) {
+      font-size: 4vw;
+    }
+  }
+  a {
+    color: blue;
+    text-decoration: underline;
   }
 }
 
