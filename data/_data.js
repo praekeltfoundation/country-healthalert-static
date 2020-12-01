@@ -22,9 +22,12 @@ export const data = [
       ]},
       {
         type: "paragraph",
-        content: "To get started, just click on this link from your phone: <link>",
-        link: "http://wa.me/23274468468?text=hey",
-        link_text: "wa.me/23274468468?text=hey"
+        content: "To get started, just click on this link from your phone:",
+      },
+      {
+        type: "list",
+        items: [
+          {content: " <link> ", link: "http://wa.me/23274468468?text=hey", link_text: "English"}],
       },
       {
         type: "paragraph",
@@ -175,9 +178,12 @@ export const data = [
       ]},
       {
         type: "paragraph",
-        content: "To get started, just click on this link from your phone: <link>",
-        link: "https://wa.me/258843318727?text=ola",
-        link_text: "Portuguese"
+        content: "To get started, just click on this link from your phone:",
+      },
+      {
+        type: "list",
+        items: [
+          {content: " <link> ", link: "https://wa.me/258843318727?text=ola", link_text: "Portuguese"}]
       },
       {
         type: "paragraph",
@@ -249,9 +255,12 @@ export const data = [
       },
       {
         type: "paragraph",
-        content: "To get started, just click on this link from your phone: <link>",
-        link: "https://wa.me/256323200660?text=hi",
-        link_text: "English"
+        content: "To get started, just click on this link from your phone:",
+      },
+      {
+        type: "list",
+        items: [
+          {content: " <link> ", link: "https://wa.me/256323200660?text=hi", link_text: "English"}],
       },
       {
         type: "paragraph",
@@ -260,15 +269,15 @@ export const data = [
   },
   {
     id: "drc",
-    title: "Democratic Republic of Congo",
-    subtitle: "This is the official COVID-19 WhatsApp service of the Democratic Republic of Congo Ministry of Health.",
+    title: "DRC",
+    subtitle: "This is the official COVID-19 WhatsApp service of the Ministère de la Santé Publique de la République Démocratique du Congo.",
     src: "/img/_countries/_banners/DRC.png",
     thumbnail: "/img/_countries/_thumbnails/DRC.png",
     excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
     body: [
       {
         type: "paragraph",
-        content: "The service provides accurate, up-to-date information in English, including:"
+        content: "The service provides accurate, up-to-date information, including:"
       },
       {
         type: "list",
@@ -286,13 +295,18 @@ export const data = [
       },
       {
         type: "paragraph",
-        content: "To get started, just click on this link from your phone: <link>",
-        link: "https://wa.me/256323200660?text=hi",
-        link_text: "English"
-      },
+        content: "To get started, just click on this link from your phone:",
+        type: "list",
+        items: [
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Français", link_text: "French"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Swahili", link_text: "Swahili"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Tshiluba", link_text: "Tshiluba"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Kikongo", link_text: "Kikongo"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Lingala", link_text: "Lingala"},
+      ]},
       {
         type: "paragraph",
-        content: "Or send “hi” to +25 632 320 0660"
+        content: "Or send “bonjour” to +243995567216"
       }]
   }
 ]
