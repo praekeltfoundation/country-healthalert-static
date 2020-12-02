@@ -44,19 +44,21 @@ function CountryRollOut({ country }) {
 
   return (
     <Layout dynamic>
-      <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__about}`}>
-        <div className={utilStyles.caption} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
-          <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>
-            {country.title}
-          </h2>
-          <p className={utilStyles.description}>
-            {country.subtitle}
-          </p>
+      <section className={`${utilStyles.wrapper__countrycontent} ${utilStyles.wrapper__about}`}>
+        <div className={utilStyles.countrycaption} data-aos="fade-up" data-aos-delay="100" data-aos-easing="ease-in-out-quad">
           <div className={utilStyles.thumbnailDiv}>
             <img src={country.src}
               className={utilStyles.thumbnail}
             />
           </div>
+
+          <h2 className={`${utilStyles.countrytitle} ${utilStyles.countrytitleStrong}`}>
+            {country.title}
+          </h2>
+          <p className={utilStyles.descriptioncountry}>
+            {country.subtitle}
+          </p>
+
         </div>
 
         <div className={utilStyles.body}>

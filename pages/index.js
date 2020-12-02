@@ -10,8 +10,8 @@ export default function Home() {
       <section className={`${utilStyles.wrapper__content} ${utilStyles.wrapper__home}`}>
         <h1 className={utilStyles.title}>Health</h1>
         <h2 className={`${utilStyles.title} ${utilStyles.titleStrong}`}>Alert</h2>
-        <h3 className={utilStyles.subtitle}>for COVID-19</h3>
-        <p className={utilStyles.description}>
+        <h3 className={utilStyles.subtitlecenter}>for COVID-19</h3>
+        <p className={utilStyles.descriptioncentre}>
           Locally-relevant, accurate and up-to-date COVID-19
           communications direct to a mobile phone through WhatsApp.
         </p>
@@ -39,7 +39,7 @@ export default function Home() {
               alt="Healthconnect Communication Strategy"
             />
           </div>
-          <div className="card-ui__item card-ui__item--text">
+          <div className="card-ui__itemright card-ui__itemright--text">
             <h4 className={utilStyles.titleMicro}>What is HealthAlert?</h4>
             <p className={utilStyles.excerpt}>Through HealthAlert,
             WhatsApp users can easily access accurate, timeous information.

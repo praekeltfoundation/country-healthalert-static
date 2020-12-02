@@ -9,11 +9,11 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-height: 200px;
+  height: 30vw;
 
-  @media (min-width: 541px) {
-    height: auto;
-  }
+  // @media (min-width: 541px) {
+  //   height: auto;
+  // }
 }
 
 .nav {
@@ -34,7 +34,7 @@ height: 200px;
 .logo {
   display: block;
   font-family: 'Roboto Slab', serif;
-  margin: 0 0 1.5em;
+  margin: 0 0 1.50vw;
   position: relative;
   font-weight: 100;
   &:hover,
@@ -43,7 +43,7 @@ height: 200px;
   }
   &Name {
     display: inline-block;
-    font-size: 20px;
+    font-size: 2vw;
     font-weight: 500;
   }
 }
@@ -59,26 +59,26 @@ height: 200px;
 
   padding: 1em;
   width: 100%;
-  @media (min-width: 541px) {
-    height: 100px;
-    padding: 1em 15%;
-  }
 }
 
 .menu {
   display: block;
   position: relative;
-  margin: 0 0 1.5em;
+  margin: 0 0 1.5vw;
+  text-size: 1vw;
+  @media (min-width: 401px) and (max-width: 720px) {
+    font-size: 2vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 3vw;
+  }
   &List {
     margin: 0;
     padding: 0;
     &Item {
       list-style: none;
       display: inline-block;
-      margin: 0 0.5em;
-      @media (min-width: 541px) {
-        margin: 0 1.5em;
-      }
+      margin: 0 0.5vw;
     }
     &Anchor {
       display: block;
@@ -89,8 +89,8 @@ height: 200px;
       }
     }
     &Icon {
-      height: 25px;
-      width: 25px;
+      height: 2vw;
+      width: 2vw;
     }
 
   }
@@ -98,7 +98,7 @@ height: 200px;
 
 .cta {
   display: block;
-  margin: 0 0 1.5em;
+  margin: 0 0 1.5vw;
   &:hover,
   &:focus {
     opacity: 0.8;
@@ -135,8 +135,8 @@ height: 200px;
   cursor: pointer;
   display: block;
   background: url('../../public/img/_icons/white-arrow.png') no-repeat 0 0 / 100%;
-  width: 30px;
-  height: 30px;
+  width: 3vw;
+  height: 3vw;
   margin: 0 auto;
   position: absolute;
   bottom: 0;
@@ -150,34 +150,34 @@ height: 200px;
     animation-delay: 3s;
     background-color: var(--very-light-gray);
     content: " ";
-    height: 5px;
-    width: 5px;
-    top: -15px;
+    height: 1vw;
+    width: 1vw;
+    top: -2vw;
     left: 50%;
     position: absolute;
     display: block;
     border-radius: 50%;
-    margin-left: -2px;
+    margin-left: -1vw;
   }
 }
 
 .backToHome {
   background: var(--very-light-gray);
-  padding: 4em 5%;
+  padding: 4vw 5%;
   &Anchor {
     display: inline-block;
-    font-size: 14px;
+    font-size: 2vw;
     text-transform: uppercase;
     font-weight: 500;
     &:before {
       background: url('../../public/img/_icons/undo.png') no-repeat 0 0 / 100%;
       content: "";
       display: block;
-      height: 50px;
-      margin: 0 -5px 0;
+      height: 4vw;
+      margin: 0 -1vw 0;
       opacity: 1;
       vertical-align: middle;
-      width: 50px;
+      width: 4vw;
     }
     &:hover,
     &:focus {
@@ -191,7 +191,7 @@ height: 200px;
 .footer {
   background:  #111;
   color:var(--very-light-gray);
-  padding: 1em 0;
+  padding: 1vw 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,16 +199,13 @@ height: 200px;
     align-items: right;
     &Item {
       &__socialLinks {
-        margin: 0 0.5em;
-        @media (min-width: 541px) {
-          margin: 0 0.5em 0.5em;
-        }
+        margin: 0 0.5vw;
       }
     }
   }
 }
 .copyright {
-  font-size: 12px;
+  font-size: 1.5vw;
 }
 
 @keyframes scroll-wheel {
@@ -217,7 +214,7 @@ height: 200px;
     opacity: 1;
   }
   to {
-    transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 1vw, 0);
     opacity: 0;
   }
 }
