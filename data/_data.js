@@ -1,76 +1,5 @@
 export const data = [
   {
-    id: "sierra-leone",
-    title: "Sierra Leone",
-    subtitle: "This is the official COVID-19 WhatsApp service of the Sierra Leone Ministry of Health and Sanitation.",
-    src: "/img/_countries/_banners/Sierra-Leone.png",
-    thumbnail: "/img/_countries/_thumbnails/Sierra-Leone.png",
-    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
-    body: [
-      {
-        type: "paragraph",
-        content: "This English service provides accurate, up-to-date information directly on WhatsApp, including:"
-      },
-      {
-        type: "list",
-        items: [
-          {content: "Latest case statistics for Sierra Leone"},
-          {content: "Advice on how to protect yourself"},
-          {content: "Frequently asked questions"},
-          {content: "Travel advice for travelling to or from Sierra Leone"},
-          {content: "Myth busting, and more"}
-      ]},
-      {
-        type: "paragraph",
-        content: "To get started, just click on this link from your phone:",
-      },
-      {
-        type: "list",
-        items: [
-          {content: " <link> ", link: "http://wa.me/23274468468?text=hey", link_text: "English"}],
-      },
-      {
-        type: "paragraph",
-        content: "Or send “hey” to +232 74 468468"
-      }]
-  },
-  {
-    id: "ethiopia",
-    title: "Ethiopia",
-    subtitle: "This is the official COVID-19 WhatsApp service of the Ethiopian Federal Ministry of Health.",
-    src: "/img/_countries/_banners/Ethiopia.png",
-    thumbnail: "/img/_countries/_thumbnails/Ethiopia.png",
-    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
-    body: [
-      {
-        type: "paragraph",
-        content: "Accurate, up-to-date information is provided in Amharic on WhatsApp, including:"
-      },
-      {
-        type: "list",
-        items: [
-          {content: "Latest case statistics"},
-          {content: "Advice on how to protect yourself"},
-          {content: "Frequently asked questions"},
-          {content: "Myth busting"},
-          {content: "Travel advice"},
-          {content: "News"}
-      ]},
-      {
-        type: "paragraph",
-        content: "To get started, just click on this link from your phone: ",
-      },
-      {
-        type: "list",
-        items: [
-          {content: " <link> ", link: "http://wa.me/251962228565?text=hi", link_text: "Amharic"}],
-      },
-      {
-        type: "paragraph",
-        content: "Or send “hi” to +25 196 222 8565"
-      }]
-  },
-  {
     id: "bangladesh",
     title: "Bangladesh",
     subtitle: "This is the official COVID-19 WhatsApp service of the Program of Directorate General of Health Services, Ministry of Health and Family Welfare, for the People’s Republic of Bangladesh.",
@@ -113,6 +42,98 @@ export const data = [
       }]
   },
   {
+    id: "drc",
+    title: "DRC",
+    subtitle: "This is the official COVID-19 WhatsApp service of the Ministère de la Santé Publique de la République Démocratique du Congo.",
+    src: "/img/_countries/_banners/DRC.png",
+    thumbnail: "/img/_countries/_thumbnails/DRC.png",
+    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
+    body: [
+      {
+        type: "paragraph",
+        content: "The service provides accurate, up-to-date information, including:"
+      },
+      {
+        type: "list",
+        items: [
+          {content: "Latest statistics"},
+          {content: "Advice on how to protect yourself"},
+          {content: "Frequently asked questions"},
+          {content: "Debunking myths"},
+          {content: "Travel advice"},
+          {content: "News"}
+      ]},
+      {
+        type: "paragraph",
+        content: "You can also find national guidelines relating to trucking, mass gatherings, public transport, uniformed personnel, funerals, markets, self-isolation, work meetings, discharge after COVID-19 treatment, prisons and Village Health Teams."
+      },
+      {
+        type: "paragraph",
+        content: "To get started, just click on this link from your phone:",
+        type: "list",
+        items: [
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Français", link_text: "French"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Swahili", link_text: "Swahili"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Tshiluba", link_text: "Tshiluba"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Kikongo", link_text: "Kikongo"},
+          {content: " <link> ", link: "https://wa.me/243995567216?text=Lingala", link_text: "Lingala"},
+      ]},
+      {
+        type: "paragraph",
+        content: "Or send “bonjour” to +243995567216"
+      }]
+  },
+  {
+    id: "eswatini",
+    title: "eSwatini",
+    subtitle: "Coming Soon.",
+    src: "/img/_countries/_banners/eSwatini.png",
+    thumbnail: "/img/_countries/_thumbnails/eSwatini.png"
+  },
+  {
+    id: "ethiopia",
+    title: "Ethiopia",
+    subtitle: "This is the official COVID-19 WhatsApp service of the Ethiopian Federal Ministry of Health.",
+    src: "/img/_countries/_banners/Ethiopia.png",
+    thumbnail: "/img/_countries/_thumbnails/Ethiopia.png",
+    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
+    body: [
+      {
+        type: "paragraph",
+        content: "Accurate, up-to-date information is provided in Amharic on WhatsApp, including:"
+      },
+      {
+        type: "list",
+        items: [
+          {content: "Latest case statistics"},
+          {content: "Advice on how to protect yourself"},
+          {content: "Frequently asked questions"},
+          {content: "Myth busting"},
+          {content: "Travel advice"},
+          {content: "News"}
+      ]},
+      {
+        type: "paragraph",
+        content: "To get started, just click on this link from your phone: ",
+      },
+      {
+        type: "list",
+        items: [
+          {content: " <link> ", link: "http://wa.me/251962228565?text=hi", link_text: "Amharic"}],
+      },
+      {
+        type: "paragraph",
+        content: "Or send “hi” to +25 196 222 8565"
+      }]
+  },
+  {
+    id: "jamaica",
+    title: "Jamaica",
+    subtitle: "Coming Soon.",
+    src: "/img/_countries/_banners/Jamaica.png",
+    thumbnail: "/img/_countries/_thumbnails/Jamaica.png"
+  },
+  {
     id: "madagascar",
     title: "Madagascar",
     subtitle: "This is the official COVID-19 WhatsApp service of the Ministère des Postes des Télécommunications et du Dévelopement Numérique in Madagascar.",
@@ -149,6 +170,13 @@ export const data = [
         type: "paragraph",
         content: "Or send “Fahasalamanao” to +26 132 190 1919"
       }]
+  },
+  {
+    id: "mauritania",
+    title: "Mauritania",
+    subtitle: "Coming Soon.",
+    src: "/img/_countries/_banners/Mauritania.png",
+    thumbnail: "/img/_countries/_thumbnails/Mauritania.png"
   },
   {
     id: "mozambique",
@@ -188,6 +216,41 @@ export const data = [
       {
         type: "paragraph",
         content: "Or send “Ola” to +25 884 331 8727"
+      }]
+  },
+  {
+    id: "sierra-leone",
+    title: "Sierra Leone",
+    subtitle: "This is the official COVID-19 WhatsApp service of the Sierra Leone Ministry of Health and Sanitation.",
+    src: "/img/_countries/_banners/Sierra-Leone.png",
+    thumbnail: "/img/_countries/_thumbnails/Sierra-Leone.png",
+    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
+    body: [
+      {
+        type: "paragraph",
+        content: "This English service provides accurate, up-to-date information directly on WhatsApp, including:"
+      },
+      {
+        type: "list",
+        items: [
+          {content: "Latest case statistics for Sierra Leone"},
+          {content: "Advice on how to protect yourself"},
+          {content: "Frequently asked questions"},
+          {content: "Travel advice for travelling to or from Sierra Leone"},
+          {content: "Myth busting, and more"}
+      ]},
+      {
+        type: "paragraph",
+        content: "To get started, just click on this link from your phone:",
+      },
+      {
+        type: "list",
+        items: [
+          {content: " <link> ", link: "http://wa.me/23274468468?text=hey", link_text: "English"}],
+      },
+      {
+        type: "paragraph",
+        content: "Or send “hey” to +232 74 468468"
       }]
   },
   {
@@ -265,48 +328,6 @@ export const data = [
       {
         type: "paragraph",
         content: "Or send “hi” to +25 632 320 0660"
-      }]
-  },
-  {
-    id: "drc",
-    title: "DRC",
-    subtitle: "This is the official COVID-19 WhatsApp service of the Ministère de la Santé Publique de la République Démocratique du Congo.",
-    src: "/img/_countries/_banners/DRC.png",
-    thumbnail: "/img/_countries/_thumbnails/DRC.png",
-    excerpt: "Countries or organisations can enhance the service with country-specific information that is trusted and up to date.",
-    body: [
-      {
-        type: "paragraph",
-        content: "The service provides accurate, up-to-date information, including:"
-      },
-      {
-        type: "list",
-        items: [
-          {content: "Latest statistics"},
-          {content: "Advice on how to protect yourself"},
-          {content: "Frequently asked questions"},
-          {content: "Debunking myths"},
-          {content: "Travel advice"},
-          {content: "News"}
-      ]},
-      {
-        type: "paragraph",
-        content: "You can also find national guidelines relating to trucking, mass gatherings, public transport, uniformed personnel, funerals, markets, self-isolation, work meetings, discharge after COVID-19 treatment, prisons and Village Health Teams."
-      },
-      {
-        type: "paragraph",
-        content: "To get started, just click on this link from your phone:",
-        type: "list",
-        items: [
-          {content: " <link> ", link: "https://wa.me/243995567216?text=Français", link_text: "French"},
-          {content: " <link> ", link: "https://wa.me/243995567216?text=Swahili", link_text: "Swahili"},
-          {content: " <link> ", link: "https://wa.me/243995567216?text=Tshiluba", link_text: "Tshiluba"},
-          {content: " <link> ", link: "https://wa.me/243995567216?text=Kikongo", link_text: "Kikongo"},
-          {content: " <link> ", link: "https://wa.me/243995567216?text=Lingala", link_text: "Lingala"},
-      ]},
-      {
-        type: "paragraph",
-        content: "Or send “bonjour” to +243995567216"
       }]
   }
 ]
