@@ -20,7 +20,7 @@
     "react-masonry-component": "^6.2.1",
     "sass": "^1.26.10",
     "styled-components": "^5.2.0",
-    "swr": "^0.3.3",
+    "swr": "^0.5.7",
     "unfetch": "^4.1.0"
   }
 }
